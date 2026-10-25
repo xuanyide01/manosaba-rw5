@@ -2,6 +2,6 @@
   "version": "0.1.7",
   "packageSha256": "98e6e64634258aa90cdd6361449b900ddc9b6145ab941fd1ed11ab0e0be4a56b",
   "platform": "official Vela generic 432x514",
-  "capture": "reports/title-v017.png",
+  "capture": "docs/title.png",
   "scope": "current package installed and title screenshot captured; gameplay tests not rerun"
 }

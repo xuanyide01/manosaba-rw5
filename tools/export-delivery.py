@@ -59,7 +59,7 @@ if icon_only:
  report['runtimeUnitTests']['inheritedFromVersion']=validation_version
  report['runtimeUnitTests']['rerunForCurrentVersion']=False
  report['limitations'][-1]='0.1.7 仅完成图标、签名与包体差异校验；游戏功能验证沿用代码相同的 0.1.6。未重新进行整版模拟器或实机测试。'
-physical_path=root/'reports'/('physical-test-v'+manifest['versionName']+'.json')
+physical_path=root/'reports'/('physical-test-v'+manifest['versionName'].replace('.','')+'.json')
 if physical_path.exists():
  physical=json.loads(physical_path.read_text(encoding='utf8'))
  assert physical['version']==manifest['versionName'] and physical['packageSha256']==sha and physical['physicalTestPassed']
