@@ -1,0 +1,28 @@
+{
+  "version": "0.1.4",
+  "passed": 44,
+  "failed": 0,
+  "runtime": 10,
+  "autoplayAndUI": 17,
+  "v012Fixes": 9,
+  "behaviors": [
+    "current completed sentence waits without retyping",
+    "30ms per character on following sentences",
+    "2600/1500/800ms base wait",
+    "extra over 60 chars at 30ms each capped at 5000ms",
+    "choice, objection, map, evidence and execution stop",
+    "drag hold and inertia suspend, release restarts full wait",
+    "menu, handbook, slots and background suspend",
+    "previous, title, end and failure disable",
+    "manual text speed independent",
+    "old 30 save slots and keys retained",
+    "manual chapter skip turns auto off at stop; pending choice lists retained"
+  ],
+  "sourceSha256": {
+    "src\\common\\autoplay.js": "69ad16f7e7b4bf16454a47a7e95764c7112b11dd1c1577639fd5d6ba2a1e054c",
+    "src\\pages\\index\\index.ux": "89108bfa1d9f6ec61719a7945c6f00f0118d70abbdaf4f931282f633acb63d1a",
+    "src\\common\\saves.js": "9103226f57cf85dfd2a408fc34a3c608d326ddeca5bc922f62fa7a575b599d69",
+    "tests\\autoplay.cjs": "4ce247198e23df42b0d780d306e36bee8282f632818e0faef21d7e8440258c51"
+  },
+  "chapterSkip": 8
+}

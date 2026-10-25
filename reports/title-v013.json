@@ -1,0 +1,54 @@
+{
+  "selected": "C: official school group artwork",
+  "sourcePage": "https://manosaba.com/posts/ReadingEvent-nextpage",
+  "sourceImage": "https://storage.googleapis.com/studio-design-asset-files/projects/6kq9vB8bap/s-5787x4093_v-frms_webp_a551565d-a905-47af-a1d8-e94a31c2e043.jpg",
+  "sourceSha256": "7e4e290bb6e5330ec5d2b3cbe70decee412cac2269eb6851d54513d992aad6bb",
+  "sourceDimensions": [
+    5787,
+    4093
+  ],
+  "titleCropCenters": [
+    [
+      0.44,
+      0.45
+    ],
+    [
+      0.68,
+      0.45
+    ]
+  ],
+  "progressThreshold": 6,
+  "buttons": {
+    "NewGame": [
+      26,
+      330,
+      406,
+      384
+    ],
+    "LoadGame": [
+      26,
+      394,
+      211,
+      442
+    ],
+    "Gallery": [
+      221,
+      394,
+      406,
+      442
+    ],
+    "Options": [
+      26,
+      450,
+      211,
+      498
+    ],
+    "Exit": [
+      221,
+      450,
+      406,
+      498
+    ]
+  },
+  "originalButtonLettering": true
+}

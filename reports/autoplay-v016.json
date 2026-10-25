@@ -1,0 +1,36 @@
+{
+  "version": "0.1.6",
+  "passed": 58,
+  "failed": 0,
+  "runtime": 10,
+  "autoplayAndUI": 23,
+  "v012Fixes": 9,
+  "behaviors": [
+    "current completed sentence waits without retyping",
+    "30ms per character on following sentences",
+    "2600/1500/800ms base wait",
+    "extra over 60 chars at 30ms each capped at 5000ms",
+    "choice, objection, map, evidence and execution stop",
+    "drag hold and inertia suspend, release restarts full wait",
+    "menu, handbook, slots and background suspend",
+    "previous, title, end and failure disable",
+    "manual text speed independent",
+    "old 30 save slots and keys retained",
+    "manual skip preserves enabled/disabled switch and speed",
+    "trial-opening hold preserves enabled switch until manual continue",
+    "normal chapter and answered choices resume auto",
+    "bounded shared-program and two-block cache cleared on title/destroy",
+    "direct original-word objection buttons",
+    "visited-map display order retains original ids",
+    "desktop-precomputed program and portrait lookup tables"
+  ],
+  "sourceSha256": {
+    "src\\common\\autoplay.js": "69ad16f7e7b4bf16454a47a7e95764c7112b11dd1c1577639fd5d6ba2a1e054c",
+    "src\\pages\\index\\index.ux": "51d949050b7dd39af5c4be85a59b1a4291480a111b73b211658dfde3e257912b",
+    "src\\common\\saves.js": "9103226f57cf85dfd2a408fc34a3c608d326ddeca5bc922f62fa7a575b599d69",
+    "tests\\autoplay.cjs": "509cd93b50fe14ee1c900ab09f0b9c9091e920ade63847952a1c7180f8ef21ea"
+  },
+  "chapterSkip": 8,
+  "programStore": 4,
+  "uiV016": 4
+}

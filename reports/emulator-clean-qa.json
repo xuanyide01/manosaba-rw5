@@ -1,0 +1,8 @@
+{
+  "backup": "<workspace>\\work\\manosaba-environment\\backups\\vela_data-pre-v011-clean-qa.bin",
+  "backupBytes": 268435456,
+  "factory": "<workspace>\\work\\vela-environment\\sdk\\system-images\\vela-watch-5.0\\vela_data.bin",
+  "factorySha256": "09dcc12409126dace946ca8a84230a7aa740b3b149ad6a3b115e2ab338a55a9b",
+  "target": "<workspace>\\work\\manosaba-environment\\vvd\\ManosabaRW5-432x514.vvd\\vela_data.bin",
+  "physicalDeviceAffected": false
+}

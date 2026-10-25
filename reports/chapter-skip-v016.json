@@ -1,0 +1,2991 @@
+{
+  "version": "0.1.6",
+  "meaning": "original Act/Chapter rather than each Adv/Trial script file",
+  "allOriginalStoryOpcodesUnchanged": true,
+  "summary": {
+    "entrances": 371,
+    "validStops": 371,
+    "errors": 0,
+    "maxIterations": 37,
+    "reasons": {
+      "choice": 49,
+      "map": 106,
+      "trial-start": 26,
+      "execution": 16,
+      "chapter": 13,
+      "objection": 156,
+      "explicit-pause": 4,
+      "end": 1
+    }
+  },
+  "results": [
+    {
+      "start": "Act01_Chapter01_Adv01",
+      "stop": "Act01_Chapter01_Adv05",
+      "cursor": 38,
+      "reason": "choice",
+      "iterations": 22,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Adv02",
+      "stop": "Act01_Chapter01_Adv05",
+      "cursor": 38,
+      "reason": "choice",
+      "iterations": 17,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Adv03",
+      "stop": "Act01_Chapter01_Adv05",
+      "cursor": 38,
+      "reason": "choice",
+      "iterations": 12,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Adv04",
+      "stop": "Act01_Chapter01_Adv05",
+      "cursor": 38,
+      "reason": "choice",
+      "iterations": 7,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Adv05",
+      "stop": "Act01_Chapter01_Adv05",
+      "cursor": 38,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Adv06",
+      "stop": "Act01_Chapter01_Adv07",
+      "cursor": 84,
+      "reason": "choice",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Adv07",
+      "stop": "Act01_Chapter01_Adv07",
+      "cursor": 84,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Adv08",
+      "stop": "Act01_Chapter01_Adv11",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 16,
+      "options": 4
+    },
+    {
+      "start": "Act01_Chapter01_Adv09",
+      "stop": "Act01_Chapter01_Adv11",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 11,
+      "options": 4
+    },
+    {
+      "start": "Act01_Chapter01_Adv10",
+      "stop": "Act01_Chapter01_Adv11",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 4
+    },
+    {
+      "start": "Act01_Chapter01_Adv11",
+      "stop": "Act01_Chapter01_Adv11",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 4
+    },
+    {
+      "start": "Act01_Chapter01_Adv12",
+      "stop": "Act01_Chapter01_Adv11",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 4
+    },
+    {
+      "start": "Act01_Chapter01_Adv13",
+      "stop": "Act01_Chapter01_Adv13",
+      "cursor": 43,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Adv14",
+      "stop": "Act01_Chapter01_Adv11",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 4
+    },
+    {
+      "start": "Act01_Chapter01_Adv15",
+      "stop": "Act01_Chapter01_Adv11",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 4
+    },
+    {
+      "start": "Act01_Chapter01_Adv16",
+      "stop": "Act01_Chapter01_Adv18",
+      "cursor": 197,
+      "reason": "choice",
+      "iterations": 11,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter01_Adv17",
+      "stop": "Act01_Chapter01_Adv18",
+      "cursor": 197,
+      "reason": "choice",
+      "iterations": 6,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter01_Adv18",
+      "stop": "Act01_Chapter01_Adv18",
+      "cursor": 197,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter01_Adv19",
+      "stop": "Act01_Chapter01_Adv19",
+      "cursor": 46,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Adv20",
+      "stop": "Act01_Chapter01_Adv20",
+      "cursor": 97,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Adv21",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 21,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv22",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 16,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv23",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 11,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv24",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv25",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv26",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv27",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv28",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv29",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv30",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv31",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv32",
+      "stop": "Act01_Chapter01_Adv25",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 8
+    },
+    {
+      "start": "Act01_Chapter01_Adv33",
+      "stop": "Act01_Chapter01_Adv33",
+      "cursor": 61,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Adv34",
+      "stop": "Act01_Chapter01_Trial00",
+      "cursor": 6,
+      "reason": "trial-start",
+      "iterations": 12,
+      "options": 0
+    },
+    {
+      "start": "Act01_Chapter01_Adv35",
+      "stop": "Act01_Chapter01_Adv35",
+      "cursor": 133,
+      "reason": "execution",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter01_Adv36",
+      "stop": "Act01_Chapter02_Adv01",
+      "cursor": 4,
+      "reason": "chapter",
+      "iterations": 8,
+      "options": 0
+    },
+    {
+      "start": "Act01_Chapter01_Trial00",
+      "stop": "Act01_Chapter01_Trial01",
+      "cursor": 19,
+      "reason": "objection",
+      "iterations": 12,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter01_Trial01",
+      "stop": "Act01_Chapter01_Trial01",
+      "cursor": 19,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter01_Trial02",
+      "stop": "Act01_Chapter01_Trial02",
+      "cursor": 15,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter01_Trial03",
+      "stop": "Act01_Chapter01_Trial03",
+      "cursor": 24,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter01_Trial04",
+      "stop": "Act01_Chapter01_Trial04",
+      "cursor": 23,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter01_Trial05",
+      "stop": "Act01_Chapter01_Trial05",
+      "cursor": 8,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter01_Trial06",
+      "stop": "Act01_Chapter01_Trial06",
+      "cursor": 20,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter01_Trial07",
+      "stop": "Act01_Chapter01_Trial07",
+      "cursor": 14,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter01_Trial08",
+      "stop": "Act01_Chapter01_Trial08",
+      "cursor": 8,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter01_Trial09",
+      "stop": "Act01_Chapter01_Trial09",
+      "cursor": 11,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter01_Trial10",
+      "stop": "Act01_Chapter01_Trial10",
+      "cursor": 10,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter01_Trial11",
+      "stop": "Act01_Chapter01_Trial11",
+      "cursor": 14,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter01_Trial12",
+      "stop": "Act01_Chapter01_Trial12",
+      "cursor": 44,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter01_Trial13",
+      "stop": "Act01_Chapter01_Trial13",
+      "cursor": 35,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter01_Trial14",
+      "stop": "Act01_Chapter01_Trial14",
+      "cursor": 62,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter01_Trial15",
+      "stop": "Act01_Chapter01_Adv35",
+      "cursor": 133,
+      "reason": "execution",
+      "iterations": 6,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter02_Adv01",
+      "stop": "Act01_Chapter02_Adv03",
+      "cursor": 52,
+      "reason": "choice",
+      "iterations": 11,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter02_Adv02",
+      "stop": "Act01_Chapter02_Adv03",
+      "cursor": 52,
+      "reason": "choice",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter02_Adv03",
+      "stop": "Act01_Chapter02_Adv03",
+      "cursor": 52,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter02_Adv04",
+      "stop": "Act01_Chapter02_Adv05",
+      "cursor": 228,
+      "reason": "choice",
+      "iterations": 7,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter02_Adv05",
+      "stop": "Act01_Chapter02_Adv05",
+      "cursor": 228,
+      "reason": "choice",
+      "iterations": 2,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter02_Adv06",
+      "stop": "Act01_Chapter02_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 11,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter02_Adv07",
+      "stop": "Act01_Chapter02_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter02_Adv08",
+      "stop": "Act01_Chapter02_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter02_Adv09",
+      "stop": "Act01_Chapter02_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter02_Adv10",
+      "stop": "Act01_Chapter02_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter02_Adv11",
+      "stop": "Act01_Chapter02_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter02_Adv12",
+      "stop": "Act01_Chapter02_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter02_Adv13",
+      "stop": "Act01_Chapter02_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter02_Adv14",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 26,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv15",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 21,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv16",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 16,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv17",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 11,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv18",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv19",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv20",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv21",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv22",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv23",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv24",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv25",
+      "stop": "Act01_Chapter02_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter02_Adv26",
+      "stop": "Act01_Chapter02_Trial00",
+      "cursor": 10,
+      "reason": "trial-start",
+      "iterations": 12,
+      "options": 0
+    },
+    {
+      "start": "Act01_Chapter02_Adv27",
+      "stop": "Act01_Chapter02_Adv27",
+      "cursor": 23,
+      "reason": "execution",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter02_Adv28",
+      "stop": "Act01_Chapter03_Adv01",
+      "cursor": 4,
+      "reason": "chapter",
+      "iterations": 13,
+      "options": 0
+    },
+    {
+      "start": "Act01_Chapter02_Adv29",
+      "stop": "Act01_Chapter03_Adv01",
+      "cursor": 4,
+      "reason": "chapter",
+      "iterations": 8,
+      "options": 0
+    },
+    {
+      "start": "Act01_Chapter02_Trial00",
+      "stop": "Act01_Chapter02_Trial01",
+      "cursor": 43,
+      "reason": "objection",
+      "iterations": 12,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter02_Trial01",
+      "stop": "Act01_Chapter02_Trial01",
+      "cursor": 43,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter02_Trial02",
+      "stop": "Act01_Chapter02_Trial02",
+      "cursor": 25,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter02_Trial03",
+      "stop": "Act01_Chapter02_Trial03",
+      "cursor": 23,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter02_Trial04",
+      "stop": "Act01_Chapter02_Trial04",
+      "cursor": 61,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter02_Trial05",
+      "stop": "Act01_Chapter02_Trial05",
+      "cursor": 55,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter02_Trial06",
+      "stop": "Act01_Chapter02_Trial06",
+      "cursor": 40,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter02_Trial07",
+      "stop": "Act01_Chapter02_Trial07",
+      "cursor": 13,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter02_Trial08",
+      "stop": "Act01_Chapter02_Trial08",
+      "cursor": 13,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter02_Trial09",
+      "stop": "Act01_Chapter02_Trial09",
+      "cursor": 43,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter02_Trial10",
+      "stop": "Act01_Chapter02_Trial10",
+      "cursor": 34,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter02_Trial11",
+      "stop": "Act01_Chapter02_Trial11",
+      "cursor": 50,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter02_Trial12",
+      "stop": "Act01_Chapter02_Trial12",
+      "cursor": 14,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter02_Trial13",
+      "stop": "Act01_Chapter02_Trial13",
+      "cursor": 20,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter02_Trial14",
+      "stop": "Act01_Chapter02_Trial14",
+      "cursor": 28,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter02_Trial15",
+      "stop": "Act01_Chapter02_Adv27",
+      "cursor": 23,
+      "reason": "execution",
+      "iterations": 6,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter03_Adv01",
+      "stop": "Act01_Chapter03_Adv03",
+      "cursor": 24,
+      "reason": "choice",
+      "iterations": 12,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter03_Adv02",
+      "stop": "Act01_Chapter03_Adv03",
+      "cursor": 24,
+      "reason": "choice",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter03_Adv03",
+      "stop": "Act01_Chapter03_Adv03",
+      "cursor": 24,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter03_Adv04",
+      "stop": "Act01_Chapter03_Adv06",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 11,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter03_Adv05",
+      "stop": "Act01_Chapter03_Adv06",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter03_Adv06",
+      "stop": "Act01_Chapter03_Adv06",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter03_Adv07",
+      "stop": "Act01_Chapter03_Adv06",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter03_Adv08",
+      "stop": "Act01_Chapter03_Adv06",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter03_Adv09",
+      "stop": "Act01_Chapter03_Adv06",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter03_Adv10",
+      "stop": "Act01_Chapter03_Adv06",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter03_Adv11",
+      "stop": "Act01_Chapter03_Adv06",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act01_Chapter03_Adv12",
+      "stop": "Act01_Chapter03_Adv12",
+      "cursor": 158,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter03_Adv13",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 31,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv14",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 26,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv15",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 21,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv16",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 16,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv17",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 11,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv18",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv19",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv20",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv21",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv22",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv23",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv24",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv25",
+      "stop": "Act01_Chapter03_Adv19",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 6
+    },
+    {
+      "start": "Act01_Chapter03_Adv26",
+      "stop": "Act01_Chapter03_Trial00",
+      "cursor": 8,
+      "reason": "trial-start",
+      "iterations": 12,
+      "options": 0
+    },
+    {
+      "start": "Act01_Chapter03_Adv27",
+      "stop": "Act01_Chapter03_Adv27",
+      "cursor": 71,
+      "reason": "execution",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter03_Adv28",
+      "stop": "Act01_Chapter04_Adv01",
+      "cursor": 4,
+      "reason": "chapter",
+      "iterations": 8,
+      "options": 0
+    },
+    {
+      "start": "Act01_Chapter03_Trial00",
+      "stop": "Act01_Chapter03_Trial01",
+      "cursor": 34,
+      "reason": "objection",
+      "iterations": 12,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter03_Trial01",
+      "stop": "Act01_Chapter03_Trial01",
+      "cursor": 34,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter03_Trial02",
+      "stop": "Act01_Chapter03_Trial02",
+      "cursor": 10,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter03_Trial03",
+      "stop": "Act01_Chapter03_Trial03",
+      "cursor": 23,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter03_Trial04",
+      "stop": "Act01_Chapter03_Trial04",
+      "cursor": 22,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter03_Trial05",
+      "stop": "Act01_Chapter03_Trial05",
+      "cursor": 16,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter03_Trial06",
+      "stop": "Act01_Chapter03_Trial06",
+      "cursor": 40,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter03_Trial07",
+      "stop": "Act01_Chapter03_Trial07",
+      "cursor": 13,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter03_Trial08",
+      "stop": "Act01_Chapter03_Trial08",
+      "cursor": 25,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter03_Trial09",
+      "stop": "Act01_Chapter03_Trial09",
+      "cursor": 19,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter03_Trial10",
+      "stop": "Act01_Chapter03_Trial10",
+      "cursor": 20,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter03_Trial11",
+      "stop": "Act01_Chapter03_Trial11",
+      "cursor": 31,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter03_Trial12",
+      "stop": "Act01_Chapter03_Trial12",
+      "cursor": 13,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter03_Trial13",
+      "stop": "Act01_Chapter03_Trial13",
+      "cursor": 48,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter03_Trial14",
+      "stop": "Act01_Chapter03_Adv27",
+      "cursor": 71,
+      "reason": "execution",
+      "iterations": 6,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter04_Adv01",
+      "stop": "Act01_Chapter04_Adv02",
+      "cursor": 116,
+      "reason": "choice",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter04_Adv02",
+      "stop": "Act01_Chapter04_Adv02",
+      "cursor": 116,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter04_Adv03",
+      "stop": "Act01_Chapter04_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 26,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter04_Adv04",
+      "stop": "Act01_Chapter04_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 21,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter04_Adv05",
+      "stop": "Act01_Chapter04_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 16,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter04_Adv06",
+      "stop": "Act01_Chapter04_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 11,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter04_Adv07",
+      "stop": "Act01_Chapter04_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter04_Adv08",
+      "stop": "Act01_Chapter04_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter04_Adv09",
+      "stop": "Act01_Chapter04_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter04_Adv10",
+      "stop": "Act01_Chapter04_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter04_Adv11",
+      "stop": "Act01_Chapter04_Adv08",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter04_Adv12",
+      "stop": "Act01_Chapter04_Trial00",
+      "cursor": 6,
+      "reason": "trial-start",
+      "iterations": 12,
+      "options": 0
+    },
+    {
+      "start": "Act01_Chapter04_Adv13",
+      "stop": "Act01_Chapter04_Adv13",
+      "cursor": 12,
+      "reason": "execution",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter04_Trial00",
+      "stop": "Act01_Chapter04_Trial01",
+      "cursor": 30,
+      "reason": "objection",
+      "iterations": 12,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter04_Trial01",
+      "stop": "Act01_Chapter04_Trial01",
+      "cursor": 30,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter04_Trial02",
+      "stop": "Act01_Chapter04_Trial02",
+      "cursor": 21,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter04_Trial03",
+      "stop": "Act01_Chapter04_Trial03",
+      "cursor": 12,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter04_Trial04",
+      "stop": "Act01_Chapter04_Trial04",
+      "cursor": 12,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter04_Trial05",
+      "stop": "Act01_Chapter04_Trial05",
+      "cursor": 15,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter04_Trial06",
+      "stop": "Act01_Chapter04_Trial06",
+      "cursor": 42,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter04_Trial07",
+      "stop": "Act01_Chapter04_Trial07",
+      "cursor": 27,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter04_Trial08",
+      "stop": "Act01_Chapter04_Trial08",
+      "cursor": 18,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter04_Trial09",
+      "stop": "Act01_Chapter04_Trial09",
+      "cursor": 27,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 3
+    },
+    {
+      "start": "Act01_Chapter04_Trial10",
+      "stop": "Act01_Chapter04_Trial10",
+      "cursor": 16,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter04_Trial11",
+      "stop": "Act01_Chapter04_Trial11",
+      "cursor": 42,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter04_Trial12",
+      "stop": "Act01_Chapter04_Adv13",
+      "cursor": 12,
+      "reason": "execution",
+      "iterations": 6,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter05_Adv01",
+      "stop": "Act01_Chapter05_Adv02",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter05_Adv02",
+      "stop": "Act01_Chapter05_Adv02",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter05_Adv03",
+      "stop": "Act01_Chapter05_Adv02",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter05_Adv04",
+      "stop": "Act01_Chapter05_Adv02",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 7,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter05_Adv05",
+      "stop": "Act01_Chapter05_Trial00",
+      "cursor": 9,
+      "reason": "trial-start",
+      "iterations": 12,
+      "options": 0
+    },
+    {
+      "start": "Act01_Chapter05_Adv06",
+      "stop": "Act01_Chapter05_Adv06",
+      "cursor": 220,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter05_Adv07",
+      "stop": "Act01_Chapter05_Adv09",
+      "cursor": 63,
+      "reason": "choice",
+      "iterations": 11,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter05_Adv08",
+      "stop": "Act01_Chapter05_Adv09",
+      "cursor": 63,
+      "reason": "choice",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter05_Adv09",
+      "stop": "Act01_Chapter05_Adv09",
+      "cursor": 63,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter05_Adv10",
+      "stop": "Act01_Chapter05_Adv10",
+      "cursor": 216,
+      "reason": "explicit-pause",
+      "iterations": 1,
+      "options": 0
+    },
+    {
+      "start": "Act01_Chapter05_Adv11",
+      "stop": "Act02_Chapter01_Adv01",
+      "cursor": 4,
+      "reason": "chapter",
+      "iterations": 6,
+      "options": 0
+    },
+    {
+      "start": "Act01_Chapter05_Trial00",
+      "stop": "Act01_Chapter05_Trial01",
+      "cursor": 39,
+      "reason": "objection",
+      "iterations": 12,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter05_Trial01",
+      "stop": "Act01_Chapter05_Trial01",
+      "cursor": 39,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act01_Chapter05_Trial02",
+      "stop": "Act01_Chapter05_Trial02",
+      "cursor": 21,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter05_Trial03",
+      "stop": "Act01_Chapter05_Trial03",
+      "cursor": 9,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter05_Trial04",
+      "stop": "Act01_Chapter05_Trial04",
+      "cursor": 15,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter05_Trial05",
+      "stop": "Act01_Chapter05_Trial05",
+      "cursor": 15,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter05_Trial06",
+      "stop": "Act01_Chapter05_Trial06",
+      "cursor": 21,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter05_Trial07",
+      "stop": "Act01_Chapter05_Trial07",
+      "cursor": 21,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter05_Trial08",
+      "stop": "Act01_Chapter05_Trial08",
+      "cursor": 9,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter05_Trial09",
+      "stop": "Act01_Chapter05_Trial09",
+      "cursor": 20,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act01_Chapter05_Trial10",
+      "stop": "Act01_Chapter05_Adv06",
+      "cursor": 220,
+      "reason": "choice",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter01_Adv01",
+      "stop": "Act02_Chapter01_Adv04",
+      "cursor": 232,
+      "reason": "choice",
+      "iterations": 17,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter01_Adv02",
+      "stop": "Act02_Chapter01_Adv04",
+      "cursor": 232,
+      "reason": "choice",
+      "iterations": 12,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter01_Adv03",
+      "stop": "Act02_Chapter01_Adv04",
+      "cursor": 232,
+      "reason": "choice",
+      "iterations": 7,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter01_Adv04",
+      "stop": "Act02_Chapter01_Adv04",
+      "cursor": 232,
+      "reason": "choice",
+      "iterations": 2,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter01_Adv05",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 37,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv06",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 32,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv07",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 27,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv08",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 22,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv09",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 17,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv10",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 11,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv11",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv12",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv13",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv14",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv15",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv16",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv17",
+      "stop": "Act02_Chapter01_Adv12",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter01_Adv18",
+      "stop": "Act02_Chapter01_Adv19",
+      "cursor": 65,
+      "reason": "choice",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter01_Adv19",
+      "stop": "Act02_Chapter01_Adv19",
+      "cursor": 65,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter01_Adv20",
+      "stop": "Act02_Chapter01_Trial00",
+      "cursor": 12,
+      "reason": "trial-start",
+      "iterations": 37,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter01_Adv21",
+      "stop": "Act02_Chapter01_Trial00",
+      "cursor": 12,
+      "reason": "trial-start",
+      "iterations": 32,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter01_Adv22",
+      "stop": "Act02_Chapter01_Trial00",
+      "cursor": 12,
+      "reason": "trial-start",
+      "iterations": 27,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter01_Adv23",
+      "stop": "Act02_Chapter01_Trial00",
+      "cursor": 12,
+      "reason": "trial-start",
+      "iterations": 22,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter01_Adv24",
+      "stop": "Act02_Chapter01_Trial00",
+      "cursor": 12,
+      "reason": "trial-start",
+      "iterations": 17,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter01_Adv25",
+      "stop": "Act02_Chapter01_Trial00",
+      "cursor": 12,
+      "reason": "trial-start",
+      "iterations": 12,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter01_Adv26",
+      "stop": "Act02_Chapter01_Adv26",
+      "cursor": 59,
+      "reason": "execution",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter01_Adv27",
+      "stop": "Act02_Chapter02_Adv01",
+      "cursor": 4,
+      "reason": "chapter",
+      "iterations": 8,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter01_Trial00",
+      "stop": "Act02_Chapter01_Trial01",
+      "cursor": 33,
+      "reason": "objection",
+      "iterations": 14,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter01_Trial01",
+      "stop": "Act02_Chapter01_Trial01",
+      "cursor": 33,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter01_Trial02",
+      "stop": "Act02_Chapter01_Trial02",
+      "cursor": 20,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter01_Trial03",
+      "stop": "Act02_Chapter01_Trial03",
+      "cursor": 18,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter01_Trial04",
+      "stop": "Act02_Chapter01_Trial04",
+      "cursor": 24,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter01_Trial05",
+      "stop": "Act02_Chapter01_Trial05",
+      "cursor": 11,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter01_Trial06",
+      "stop": "Act02_Chapter01_Trial06",
+      "cursor": 12,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter01_Trial07",
+      "stop": "Act02_Chapter01_Trial07",
+      "cursor": 14,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter01_Trial08",
+      "stop": "Act02_Chapter01_Trial08",
+      "cursor": 9,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter01_Trial09",
+      "stop": "Act02_Chapter01_Trial09",
+      "cursor": 27,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter01_Trial10",
+      "stop": "Act02_Chapter01_Trial10",
+      "cursor": 39,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter01_Trial11",
+      "stop": "Act02_Chapter01_Trial11",
+      "cursor": 15,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter01_Trial12",
+      "stop": "Act02_Chapter01_Trial12",
+      "cursor": 22,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter01_Trial13",
+      "stop": "Act02_Chapter01_Adv26",
+      "cursor": 59,
+      "reason": "execution",
+      "iterations": 6,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Adv01",
+      "stop": "Act02_Chapter02_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 16,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter02_Adv02",
+      "stop": "Act02_Chapter02_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 11,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter02_Adv03",
+      "stop": "Act02_Chapter02_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter02_Adv04",
+      "stop": "Act02_Chapter02_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter02_Adv05",
+      "stop": "Act02_Chapter02_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter02_Adv06",
+      "stop": "Act02_Chapter02_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter02_Adv07",
+      "stop": "Act02_Chapter02_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter02_Adv08",
+      "stop": "Act02_Chapter02_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter02_Adv09",
+      "stop": "Act02_Chapter02_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter02_Adv10",
+      "stop": "Act02_Chapter02_Adv12",
+      "cursor": 44,
+      "reason": "choice",
+      "iterations": 11,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter02_Adv11",
+      "stop": "Act02_Chapter02_Adv12",
+      "cursor": 44,
+      "reason": "choice",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter02_Adv12",
+      "stop": "Act02_Chapter02_Adv12",
+      "cursor": 44,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter02_Adv13",
+      "stop": "Act02_Chapter02_Adv13",
+      "cursor": 36,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter02_Adv14",
+      "stop": "Act02_Chapter02_Trial00",
+      "cursor": 8,
+      "reason": "trial-start",
+      "iterations": 32,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter02_Adv15",
+      "stop": "Act02_Chapter02_Trial00",
+      "cursor": 8,
+      "reason": "trial-start",
+      "iterations": 27,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter02_Adv16",
+      "stop": "Act02_Chapter02_Trial00",
+      "cursor": 8,
+      "reason": "trial-start",
+      "iterations": 22,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter02_Adv17",
+      "stop": "Act02_Chapter02_Trial00",
+      "cursor": 8,
+      "reason": "trial-start",
+      "iterations": 17,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter02_Adv18",
+      "stop": "Act02_Chapter02_Trial00",
+      "cursor": 8,
+      "reason": "trial-start",
+      "iterations": 12,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter02_Adv19",
+      "stop": "Act02_Chapter02_Adv19",
+      "cursor": 167,
+      "reason": "execution",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Adv20",
+      "stop": "Act02_Chapter03_Adv01",
+      "cursor": 4,
+      "reason": "chapter",
+      "iterations": 13,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter02_Adv21",
+      "stop": "Act02_Chapter03_Adv01",
+      "cursor": 4,
+      "reason": "chapter",
+      "iterations": 8,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter02_Trial00",
+      "stop": "Act02_Chapter02_Trial01",
+      "cursor": 14,
+      "reason": "objection",
+      "iterations": 14,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial01",
+      "stop": "Act02_Chapter02_Trial01",
+      "cursor": 14,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial02",
+      "stop": "Act02_Chapter02_Trial02",
+      "cursor": 52,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial03",
+      "stop": "Act02_Chapter02_Trial03",
+      "cursor": 13,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial04",
+      "stop": "Act02_Chapter02_Trial04",
+      "cursor": 38,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial05",
+      "stop": "Act02_Chapter02_Trial05",
+      "cursor": 29,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial06",
+      "stop": "Act02_Chapter02_Trial06",
+      "cursor": 20,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial07",
+      "stop": "Act02_Chapter02_Trial07",
+      "cursor": 11,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial08",
+      "stop": "Act02_Chapter02_Trial08",
+      "cursor": 23,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial09",
+      "stop": "Act02_Chapter02_Trial09",
+      "cursor": 36,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial10",
+      "stop": "Act02_Chapter02_Trial10",
+      "cursor": 53,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial11",
+      "stop": "Act02_Chapter02_Trial11",
+      "cursor": 15,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial12",
+      "stop": "Act02_Chapter02_Trial12",
+      "cursor": 17,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter02_Trial13",
+      "stop": "Act02_Chapter02_Adv19",
+      "cursor": 167,
+      "reason": "execution",
+      "iterations": 6,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Adv01",
+      "stop": "Act02_Chapter03_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 17,
+      "options": 4
+    },
+    {
+      "start": "Act02_Chapter03_Adv02",
+      "stop": "Act02_Chapter03_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 12,
+      "options": 4
+    },
+    {
+      "start": "Act02_Chapter03_Adv03",
+      "stop": "Act02_Chapter03_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 4
+    },
+    {
+      "start": "Act02_Chapter03_Adv04",
+      "stop": "Act02_Chapter03_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 4
+    },
+    {
+      "start": "Act02_Chapter03_Adv05",
+      "stop": "Act02_Chapter03_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 4
+    },
+    {
+      "start": "Act02_Chapter03_Adv06",
+      "stop": "Act02_Chapter03_Adv06",
+      "cursor": 163,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter03_Adv07",
+      "stop": "Act02_Chapter03_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 4
+    },
+    {
+      "start": "Act02_Chapter03_Adv08",
+      "stop": "Act02_Chapter03_Adv04",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 4
+    },
+    {
+      "start": "Act02_Chapter03_Adv09",
+      "stop": "Act02_Chapter03_Trial00",
+      "cursor": 7,
+      "reason": "trial-start",
+      "iterations": 32,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter03_Adv10",
+      "stop": "Act02_Chapter03_Trial00",
+      "cursor": 7,
+      "reason": "trial-start",
+      "iterations": 27,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter03_Adv11",
+      "stop": "Act02_Chapter03_Trial00",
+      "cursor": 7,
+      "reason": "trial-start",
+      "iterations": 22,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter03_Adv12",
+      "stop": "Act02_Chapter03_Trial00",
+      "cursor": 7,
+      "reason": "trial-start",
+      "iterations": 17,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter03_Adv13",
+      "stop": "Act02_Chapter03_Trial00",
+      "cursor": 7,
+      "reason": "trial-start",
+      "iterations": 12,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter03_Adv14",
+      "stop": "Act02_Chapter03_Adv14",
+      "cursor": 138,
+      "reason": "execution",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Adv15",
+      "stop": "Act02_Chapter04_Adv01",
+      "cursor": 5,
+      "reason": "chapter",
+      "iterations": 9,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter03_Trial00",
+      "stop": "Act02_Chapter03_Trial01",
+      "cursor": 26,
+      "reason": "objection",
+      "iterations": 14,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial01",
+      "stop": "Act02_Chapter03_Trial01",
+      "cursor": 26,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial02",
+      "stop": "Act02_Chapter03_Trial02",
+      "cursor": 8,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter03_Trial03",
+      "stop": "Act02_Chapter03_Trial03",
+      "cursor": 20,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial04",
+      "stop": "Act02_Chapter03_Trial04",
+      "cursor": 24,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial05",
+      "stop": "Act02_Chapter03_Trial05",
+      "cursor": 17,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial06",
+      "stop": "Act02_Chapter03_Trial06",
+      "cursor": 23,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial07",
+      "stop": "Act02_Chapter03_Trial07",
+      "cursor": 8,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial08",
+      "stop": "Act02_Chapter03_Trial08",
+      "cursor": 44,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial09",
+      "stop": "Act02_Chapter03_Trial09",
+      "cursor": 39,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial10",
+      "stop": "Act02_Chapter03_Trial10",
+      "cursor": 41,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial11",
+      "stop": "Act02_Chapter03_Trial11",
+      "cursor": 14,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial12",
+      "stop": "Act02_Chapter03_Trial12",
+      "cursor": 32,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial13",
+      "stop": "Act02_Chapter03_Trial13",
+      "cursor": 10,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter03_Trial14",
+      "stop": "Act02_Chapter03_Adv14",
+      "cursor": 138,
+      "reason": "execution",
+      "iterations": 6,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Adv01",
+      "stop": "Act02_Chapter04_Adv02",
+      "cursor": 42,
+      "reason": "choice",
+      "iterations": 7,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter04_Adv02",
+      "stop": "Act02_Chapter04_Adv02",
+      "cursor": 42,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter04_Adv03",
+      "stop": "Act02_Chapter04_Adv03",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 1,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter04_Adv04",
+      "stop": "Act02_Chapter04_Adv03",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter04_Adv05",
+      "stop": "Act02_Chapter04_Adv05",
+      "cursor": 50,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter04_Adv06",
+      "stop": "Act02_Chapter04_Adv03",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter04_Adv07",
+      "stop": "Act02_Chapter04_Adv03",
+      "cursor": 6,
+      "reason": "map",
+      "iterations": 6,
+      "options": 5
+    },
+    {
+      "start": "Act02_Chapter04_Adv08",
+      "stop": "Act02_Chapter04_Adv08",
+      "cursor": 70,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter04_Adv09",
+      "stop": "Act02_Chapter04_Adv10",
+      "cursor": 110,
+      "reason": "choice",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter04_Adv10",
+      "stop": "Act02_Chapter04_Adv10",
+      "cursor": 110,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter04_Adv11",
+      "stop": "Act02_Chapter04_Trial00",
+      "cursor": 6,
+      "reason": "trial-start",
+      "iterations": 24,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter04_Adv12",
+      "stop": "Act02_Chapter04_Trial00",
+      "cursor": 6,
+      "reason": "trial-start",
+      "iterations": 19,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter04_Adv13",
+      "stop": "Act02_Chapter04_Trial00",
+      "cursor": 6,
+      "reason": "trial-start",
+      "iterations": 13,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter04_Adv14",
+      "stop": "Act02_Chapter04_Adv14",
+      "cursor": 19,
+      "reason": "execution",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Adv15",
+      "stop": "Act02_Chapter05_Adv01",
+      "cursor": 3,
+      "reason": "chapter",
+      "iterations": 13,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter04_Adv16",
+      "stop": "Act02_Chapter05_Adv01",
+      "cursor": 3,
+      "reason": "chapter",
+      "iterations": 8,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter04_Trial00",
+      "stop": "Act02_Chapter04_Trial01",
+      "cursor": 20,
+      "reason": "objection",
+      "iterations": 16,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Trial01",
+      "stop": "Act02_Chapter04_Trial01",
+      "cursor": 20,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Trial02",
+      "stop": "Act02_Chapter04_Trial02",
+      "cursor": 17,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Trial03",
+      "stop": "Act02_Chapter04_Trial03",
+      "cursor": 14,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Trial04",
+      "stop": "Act02_Chapter04_Trial04",
+      "cursor": 24,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter04_Trial05",
+      "stop": "Act02_Chapter04_Trial05",
+      "cursor": 9,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Trial06",
+      "stop": "Act02_Chapter04_Trial06",
+      "cursor": 23,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Trial07",
+      "stop": "Act02_Chapter04_Trial07",
+      "cursor": 24,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Trial08",
+      "stop": "Act02_Chapter04_Trial08",
+      "cursor": 17,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Trial09",
+      "stop": "Act02_Chapter04_Trial09",
+      "cursor": 15,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Trial10",
+      "stop": "Act02_Chapter04_Trial10",
+      "cursor": 16,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter04_Trial11",
+      "stop": "Act02_Chapter04_Adv14",
+      "cursor": 19,
+      "reason": "execution",
+      "iterations": 6,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Adv01",
+      "stop": "Act02_Chapter05_Adv02",
+      "cursor": 73,
+      "reason": "choice",
+      "iterations": 6,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter05_Adv02",
+      "stop": "Act02_Chapter05_Adv02",
+      "cursor": 73,
+      "reason": "choice",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter05_Adv03",
+      "stop": "Act02_Chapter05_Trial00",
+      "cursor": 10,
+      "reason": "trial-start",
+      "iterations": 17,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter05_Adv04",
+      "stop": "Act02_Chapter05_Trial00",
+      "cursor": 10,
+      "reason": "trial-start",
+      "iterations": 12,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter05_Adv05",
+      "stop": "Act02_Chapter06_Trial00",
+      "cursor": 7,
+      "reason": "chapter",
+      "iterations": 12,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter05_Adv06",
+      "stop": "Act02_Chapter05_Adv08",
+      "cursor": 152,
+      "reason": "explicit-pause",
+      "iterations": 16,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter05_Adv07",
+      "stop": "Act02_Chapter05_Adv08",
+      "cursor": 152,
+      "reason": "explicit-pause",
+      "iterations": 8,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter05_Adv08",
+      "stop": "Act02_Chapter05_Adv08",
+      "cursor": 152,
+      "reason": "explicit-pause",
+      "iterations": 1,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter05_Adv09",
+      "stop": "Act02_Chapter05_Adv09",
+      "cursor": 18,
+      "reason": "end",
+      "iterations": 3,
+      "options": 0
+    },
+    {
+      "start": "Act02_Chapter05_Trial00",
+      "stop": "Act02_Chapter05_Trial01",
+      "cursor": 15,
+      "reason": "objection",
+      "iterations": 12,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter05_Trial01",
+      "stop": "Act02_Chapter05_Trial01",
+      "cursor": 15,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 2
+    },
+    {
+      "start": "Act02_Chapter05_Trial02",
+      "stop": "Act02_Chapter05_Trial02",
+      "cursor": 21,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial03",
+      "stop": "Act02_Chapter05_Trial03",
+      "cursor": 24,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial04",
+      "stop": "Act02_Chapter05_Trial04",
+      "cursor": 21,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial05",
+      "stop": "Act02_Chapter05_Trial05",
+      "cursor": 38,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial06",
+      "stop": "Act02_Chapter05_Trial06",
+      "cursor": 41,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial07",
+      "stop": "Act02_Chapter05_Trial07",
+      "cursor": 37,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial08",
+      "stop": "Act02_Chapter05_Trial08",
+      "cursor": 25,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial09",
+      "stop": "Act02_Chapter05_Trial09",
+      "cursor": 75,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial10",
+      "stop": "Act02_Chapter05_Trial10",
+      "cursor": 33,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial11",
+      "stop": "Act02_Chapter05_Trial11",
+      "cursor": 54,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial12",
+      "stop": "Act02_Chapter05_Trial12",
+      "cursor": 29,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial13",
+      "stop": "Act02_Chapter05_Trial13",
+      "cursor": 29,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial14",
+      "stop": "Act02_Chapter05_Trial14",
+      "cursor": 29,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial15",
+      "stop": "Act02_Chapter05_Trial15",
+      "cursor": 25,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial16",
+      "stop": "Act02_Chapter05_Trial16",
+      "cursor": 23,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial17",
+      "stop": "Act02_Chapter05_Trial17",
+      "cursor": 27,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial18",
+      "stop": "Act02_Chapter05_Trial18",
+      "cursor": 31,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial19",
+      "stop": "Act02_Chapter05_Trial19",
+      "cursor": 32,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial20",
+      "stop": "Act02_Chapter05_Trial20",
+      "cursor": 32,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial21",
+      "stop": "Act02_Chapter05_Trial21",
+      "cursor": 36,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial22",
+      "stop": "Act02_Chapter05_Trial22",
+      "cursor": 32,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial23",
+      "stop": "Act02_Chapter05_Trial23",
+      "cursor": 31,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial24",
+      "stop": "Act02_Chapter05_Trial24",
+      "cursor": 62,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial25",
+      "stop": "Act02_Chapter05_Trial25",
+      "cursor": 60,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial26",
+      "stop": "Act02_Chapter05_Trial26",
+      "cursor": 42,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial27",
+      "stop": "Act02_Chapter05_Trial27",
+      "cursor": 36,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter05_Trial28",
+      "stop": "Act02_Chapter05_Trial28",
+      "cursor": 59,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter06_Trial00",
+      "stop": "Act02_Chapter06_Trial01",
+      "cursor": 8,
+      "reason": "objection",
+      "iterations": 12,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter06_Trial01",
+      "stop": "Act02_Chapter06_Trial01",
+      "cursor": 8,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter06_Trial02",
+      "stop": "Act02_Chapter06_Trial02",
+      "cursor": 20,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter06_Trial03",
+      "stop": "Act02_Chapter06_Trial03",
+      "cursor": 19,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter06_Trial04",
+      "stop": "Act02_Chapter06_Trial04",
+      "cursor": 23,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter06_Trial05",
+      "stop": "Act02_Chapter06_Trial05",
+      "cursor": 29,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter06_Trial06",
+      "stop": "Act02_Chapter06_Trial06",
+      "cursor": 17,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter06_Trial07",
+      "stop": "Act02_Chapter06_Trial07",
+      "cursor": 26,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter06_Trial08",
+      "stop": "Act02_Chapter06_Trial08",
+      "cursor": 20,
+      "reason": "objection",
+      "iterations": 1,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter06_Trial09",
+      "stop": "Act02_Chapter06_Trial09",
+      "cursor": 172,
+      "reason": "objection",
+      "iterations": 5,
+      "options": 1
+    },
+    {
+      "start": "Act02_Chapter06_Trial10",
+      "stop": "Act02_Chapter05_Adv06",
+      "cursor": 5,
+      "reason": "chapter",
+      "iterations": 8,
+      "options": 0
+    }
+  ]
+}

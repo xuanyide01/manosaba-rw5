@@ -1,0 +1,16 @@
+from pathlib import Path
+from PIL import Image
+r=Path(__file__).resolve().parents[1];p=r/'src/pages/index/index.ux';s=p.read_text(encoding='utf8')
+s=s.replace("import {imagePath} from '../../common/assets.js';","import {imagePath,bookImages} from '../../common/assets.js';")
+s=s.replace("bookName:'',bookText:''","bookName:'',bookText:'',bookImage:''")
+s=s.replace('<scroll class="book-scroll" scroll-y="true"><text class="book-text"','<scroll class="book-scroll" scroll-y="true"><image if="{{bookImage !== \'\'}}" class="book-image" src="{{bookImage}}"></image><text class="book-text"')
+s=s.replace("this.bookName=item.name;this.bookText", "this.bookName=item.name;this.bookImage=bookImages[item.category+':'+item.id]?imagePath(bookImages[item.category+':'+item.id]):'';this.bookText")
+s=s.replace("this.chapterLabel=this.visibleText(catalog.scenes[String(this.session.rootChapter)].name)","this.chapterLabel=this.visibleText(catalog.scenes[String(this.session.rootChapter)].name).replace('第一幕','一幕').replace('第二幕','二幕')")
+s=s.replace('.speaker{font-size:23px;', '.speaker{width:200px;font-size:22px;')
+s=s.replace('.chapter{font-size:16px;', '.chapter{width:185px;font-size:13px;text-align:right;')
+s=s.replace("s.textSpeed===0?0:30", "s.textSpeed===30?30:0")
+s=s.replace("textSpeed:0,speedLabel:'显示速度：逐字'", "textSpeed:0,speedLabel:'显示速度：即时'")
+s=s.replace('</style>','.book-image{width:396px;height:220px;flex-shrink:0;object-fit:contain;margin-bottom:12px;}\n</style>')
+p.write_text(s,encoding='utf8')
+for name,color in [('solid_black.png','#000000'),('solid_white.png','#ffffff')]:Image.new('RGB',(4,4),color).save(r/'src/common/images'/name)
+print('UI refined')

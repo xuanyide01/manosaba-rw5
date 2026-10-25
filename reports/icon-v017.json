@@ -1,0 +1,31 @@
+{
+  "sourcePage": "https://www.fwinc.co.jp/manosaba_CD/ost",
+  "scanSource": "https://nu.vgmtreasurechest.com/soundtracks/magical-girl-witch-trials-complete-original-soundtrack-2025/10%20Case%20Front%20and%20Back.jpg",
+  "sourceSha256": "3915fe6a09db754e0de0b16782fde81445bd9c77d760964ecd7af9356cd51279",
+  "sourceSize": [
+    2400,
+    1604
+  ],
+  "crop": [
+    1490,
+    325,
+    2180,
+    1098
+  ],
+  "outputSize": [
+    192,
+    192
+  ],
+  "roundTransparentIcon": true,
+  "perceptualColors": 256,
+  "pngMode": "RGBA",
+  "method": "Contain the full visible character from the soundtrack illustration and its cage in a round icon; no face-only crop",
+  "artMaxSize": [
+    168,
+    168
+  ],
+  "fullVisibleCharacterRetained": true,
+  "cageRetained": true,
+  "cleanFullIllustrationLocated": false,
+  "isIndependentTextlessArtistOriginal": false
+}

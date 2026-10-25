@@ -1,0 +1,32 @@
+{
+  "format": 2,
+  "blocks": 458,
+  "preparedSourceBytes": 9680158,
+  "residentPrograms": [
+    {
+      "key": "System_ResetWitchBook:0",
+      "ops": 512,
+      "sourceBytes": 30440,
+      "opcodeSha256": "2b0fd8ad74ef04682aeee59ab6f032d4fb671c3ce8731c2118c3cb87b01a54bf"
+    },
+    {
+      "key": "System_ResetWitchBook:1",
+      "ops": 246,
+      "sourceBytes": 14601,
+      "opcodeSha256": "df9ae9141aba19caa2e81fa2b93069e382119d424be706d9c4f7b20e38e35735"
+    },
+    {
+      "key": "System_Subroutine:0",
+      "ops": 165,
+      "sourceBytes": 13432,
+      "opcodeSha256": "52253c4e74ed1aed6dab881a60b9e972c8fbb967d2e0ec0008584496401e9d23"
+    }
+  ],
+  "helperBytes": 58575,
+  "storyOpcodePositionsUnchanged": true,
+  "textIndexesPreparedOnDesktop": true,
+  "mapOrdersPreparedOnDesktop": 13,
+  "objectionLayoutsPreparedOnDesktop": 467,
+  "cacheMaxBlocks": 2,
+  "cacheMaxSourceChars": 65536
+}

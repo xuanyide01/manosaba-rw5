@@ -1,0 +1,56 @@
+{
+  "version": "0.1.6",
+  "fiveOriginalTitleWordmarks": true,
+  "titleSource": "C: official school group artwork",
+  "newGamePrimary": true,
+  "buttonHitBoxes": {
+    "NewGame": [
+      26,
+      330,
+      406,
+      384
+    ],
+    "LoadGame": [
+      26,
+      394,
+      211,
+      442
+    ],
+    "Gallery": [
+      221,
+      394,
+      406,
+      442
+    ],
+    "Options": [
+      26,
+      450,
+      211,
+      498
+    ],
+    "Exit": [
+      221,
+      450,
+      406,
+      498
+    ]
+  },
+  "chapterEntryOnlyInsideGallery": true,
+  "sceneMetadataRemoved": true,
+  "handbookInBottomToolbar": true,
+  "originalTitleThreshold": 6,
+  "progressSavedOnChange": true,
+  "bytes": 9963409,
+  "sha256": "a7fec6038265448a3598742aaef6e3b36b1dd5f02021aadd55190867831fb4a4",
+  "meaningfulChapterSkip": true,
+  "automaticReadingDisabledBySkip": false,
+  "automaticSwitchPreservedBySkip": true,
+  "boundedProgramCache": true,
+  "leftMenuRightHandbook": true,
+  "originalWordButtons": true,
+  "wordButtonMinHeight": 52,
+  "desktopPreparedTextIndexes": true,
+  "desktopPreparedMapOrders": true,
+  "desktopPreparedPortraitLayouts": true,
+  "appIconCircularRGBA": true
+}

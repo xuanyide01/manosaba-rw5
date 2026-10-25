@@ -1,0 +1,16 @@
+{
+  "version": "0.1.4",
+  "comparedWith": "0.1.3 delivered source ZIP",
+  "unchangedSourceFiles": 1046,
+  "changedSourceFiles": [
+    "src/manifest.json",
+    "src/common/engine.js",
+    "src/pages/index/index.ux"
+  ],
+  "normalReadFrameAndChooseBytesUnchanged": true,
+  "storyOpcodesAndPositionsUnchanged": true,
+  "saveSchemaAndKeysIdentical": true,
+  "imagesFontsAndPortraitLayoutIdentical": true,
+  "priorNormalReadingBranchAuditsStillApplicable": true,
+  "archiveSha256": "89dc0ec91ed2bed8b1a4e335be375d11cab1d18106559fbf8eb473f2133159e0"
+}

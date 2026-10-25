@@ -1,0 +1,9 @@
+{
+  "comparedWith": "0.1.2 delivered source ZIP",
+  "unchangedFiles": 464,
+  "storyAndEngineBytesIdentical": true,
+  "saveSchemaAndKeysIdentical": true,
+  "portraitResourcesAndLayoutUnchanged": true,
+  "priorStaticAndBoundedBranchAuditsStillApplicable": true,
+  "archiveSha256": "ac941db36b304f62ca89136cf00b2b57d2c419e1922ed0e2c68a317de2ecb92f"
+}

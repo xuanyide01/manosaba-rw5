@@ -1,0 +1,21 @@
+{
+  "version": "0.1.5",
+  "comparedWith": "0.1.4 delivered source ZIP",
+  "unchangedSourceFiles": 1046,
+  "changedSourceFiles": [
+    "src/manifest.json",
+    "src/common/engine.js",
+    "src/pages/index/index.ux"
+  ],
+  "newSourceFiles": [
+    "src/common/program-store.js",
+    "src/common/runtime-helpers.js",
+    "src/common/runtime-helpers.txt"
+  ],
+  "normalReadFrameAndChooseBytesUnchanged": true,
+  "storyOpcodesAndPositionsUnchanged": true,
+  "saveSchemaAndKeysIdentical": true,
+  "imagesFontsAndPortraitLayoutIdentical": true,
+  "priorNormalReadingBranchAuditsStillApplicable": true,
+  "archiveSha256": "84e017c160b570479c594b51cf8c9d49db70ba76494b8231dc5b2bf0dc1a5081"
+}

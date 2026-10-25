@@ -1,0 +1,24 @@
+{
+  "backgrounds": 253,
+  "cgImages": 172,
+  "cgGroups": 61,
+  "portraitAppearances": 256,
+  "uniquePortraits": 151,
+  "bookImages": 151,
+  "imageBytes": 6584442,
+  "portraitColors": 256,
+  "portraitQuantizer": "libimagequant 1.1.5, perceptual palette, no dithering",
+  "backgroundMaxWidth": 360,
+  "backgroundJpegQuality": 52,
+  "bookJpegQuality": 52,
+  "losslessPngOptimization": {
+    "optimizer": "pyoxipng 9.1.1",
+    "files": 168,
+    "beforeBytes": 3927780,
+    "afterBytes": 3894362,
+    "savedBytes": 33418,
+    "rgbaPixelsIdentical": true,
+    "bitDepthUnchanged": true,
+    "interlaced": false
+  }
+}

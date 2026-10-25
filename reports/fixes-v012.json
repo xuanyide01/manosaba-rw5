@@ -1,0 +1,40 @@
+{
+  "version": "0.1.2",
+  "photoReproduction": {
+    "scene": "Act01_Chapter01_Adv08",
+    "cursor": 8,
+    "previousSceneChoice": "定在原地一动不动",
+    "v011Visible": [
+      "Ema",
+      "Alisa"
+    ],
+    "v012Visible": [
+      "Ema"
+    ]
+  },
+  "alisaMask": "Only ClippingMask nodes excluded; Mask01 retained",
+  "wardenAppearances": 13,
+  "hannaTwoPersonMinHeight": 260,
+  "oldOpcodePositionsPreserved": 90243,
+  "maxStoryChunkBytes": 60004,
+  "unitTests": 32,
+  "allChoiceAuditSummary": {
+    "states": 123896,
+    "menus": 754,
+    "answers": 2655,
+    "saveReloads": 16388,
+    "errors": 0,
+    "boundedScenes": 37
+  },
+  "losslessPNG": {
+    "optimizer": "pyoxipng 9.1.1",
+    "files": 163,
+    "beforeBytes": 4390581,
+    "afterBytes": 3895501,
+    "savedBytes": 495080,
+    "rgbaPixelsIdentical": true,
+    "bitDepthUnchanged": true,
+    "interlaced": false
+  },
+  "physicalDeviceTested": false
+}

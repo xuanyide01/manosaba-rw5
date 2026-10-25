@@ -1,0 +1,15 @@
+const test=require('node:test'),assert=require('assert/strict'),fs=require('fs'),path=require('path');const {load,ops,program,frame,root}=require('./loader.cjs'),a=load();
+const plain=x=>JSON.parse(JSON.stringify(x));
+test('all prepared map mask orders put visited areas last without changing original destinations',()=>{
+ let count=0,masks=0;for(const id of Object.keys(a.catalog.scenes))for(const file of fs.readdirSync(path.join(root,'src/common/story',id))){const block=parseInt(file),p=program(id,block);for(const [local,table] of Object.entries(p.plan.maps)){const cursor=block*512+Number(local),op=p.ops[local];count++;for(let mask=0;mask<table.orders.length;mask++){const s=a.newState(id);s.cursor=cursor;if(op.flag)s.variables[op.flag]=mask;const f=a.readFrame(p.ops,s,block*512,a.catalog.scenes[id].length,p.plan);let seen=false;for(const item of f.items){if(item.visited)seen=true;else assert.equal(seen,false);assert.equal(item.value,op.areas[item.sourceIndex]);assert.equal(item.to,cursor+1);}assert.equal(new Set(f.items.map(x=>x.value)).size,op.areas.length);masks++;}}}assert.equal(count,13);assert.ok(masks>300);
+});
+test('selecting a reordered map entry retains its original area id and source history index',()=>{
+ const id='Act01_Chapter01_Adv11',p=program(id,0),s=a.newState(id);s.cursor=6;s.variables.chosenAreaFlag=1;const f=a.readFrame(p.ops,s,0,a.catalog.scenes[id].length,p.plan);assert.equal(f.items[0].value,'Library');assert.equal(f.items[3].value,'RecreationRoom');a.choose(s,f.items[0],0);assert.equal(s.variables.chosenAreaId,'Library');assert.equal(s.choices[0],1);
+});
+test('all 467 objection layouts retain exact source wording, order and readable button bounds',()=>{
+ let count=0;for(const id of Object.keys(a.catalog.scenes))for(const file of fs.readdirSync(path.join(root,'src/common/story',id))){const block=parseInt(file),p=program(id,block);for(const [local,view] of Object.entries(p.plan.objections)){const op=p.ops[local];count++;assert.equal(view.words.length,op.links.length);assert.equal(view.artHeight+view.panelHeight,514);assert.ok(view.height>=52);assert.ok(view.artHeight>=204);for(let i=0;i<view.words.length;i++){const w=view.words[i];assert.equal(w.text,op.links[i].text);assert.equal(w.index,i);assert.equal(w.key,id+':'+(block*512+Number(local))+':'+i);assert.ok(w.width>=125);}}}assert.equal(count,467);
+});
+test('portrait geometry tables preserve the original bottom alignment at every prepared height',()=>{
+ const dimensions=JSON.parse(fs.readFileSync(path.join(root,'resources/portrait-dimensions.json'))),heights=JSON.parse(fs.readFileSync(path.join(root,'reports/desktop-layouts.json'))).panelHeights;
+ for(const [name,size] of Object.entries(dimensions))for(const h of heights)for(let count=1;count<=3;count++)for(let index=0;index<count;index++){const cell=count>=3?144:count===2?216:432,scale=Math.min((count===1?h:cell)/size[0],h/size[1]),width=Math.round(size[0]*scale),height=Math.round(size[1]*scale),box=a.portraitBox('/common/images/'+name,count,index,h);assert.deepEqual(plain(box),{width,height,left:Math.round(index*cell+(cell-width)/2),top:h-height});}
+});

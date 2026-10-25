@@ -1,0 +1,369 @@
+<template>
+  <div class="page" onswipe="swipe">
+    <image class="system-backdrop" src="/common/ui/system.png"></image>
+    <div if="{{mode === 'title'}}" class="title-screen">
+      <image class="title-art" src="{{titleSrc}}" onerror="backgroundError" oncomplete="backgroundLoaded"></image>
+      <image class="title-logo" src="/common/ui/title-logo.png"></image>
+      <div class="title-menu">
+        <image class="title-primary" src="/common/ui/title-NewGame.png" onclick="startNew"></image>
+        <div class="title-button-row"><image class="title-button" src="/common/ui/title-LoadGame.png" onclick="continueGame"></image><image class="title-button" src="/common/ui/title-Gallery.png" onclick="openGallery"></image></div>
+        <div class="title-button-row"><image class="title-button" src="/common/ui/title-Options.png" onclick="openSettings"></image><image class="title-button" src="/common/ui/title-Exit.png" onclick="exitApplication"></image></div>
+      </div>
+    </div>
+    <div if="{{mode === 'play'}}" class="art" style="height: {{artHeight}}px;" onclick="advance">
+      <image class="art-fill" style="height: {{artHeight}}px;" src="/common/ui/art-fill.png"></image>
+      <image class="background" style="height: {{artHeight}}px;" src="{{backgroundSrc}}" onerror="backgroundError" oncomplete="backgroundLoaded"></image>
+      <image if="{{bodySrc !== ''}}" class="body" style="width: {{portraitWidth}}px; height: {{portraitHeight}}px; top: {{portraitTop}}px; left: {{portraitLeft}}px;" src="{{bodySrc}}"></image>
+      <image if="{{bodySecond !== ''}}" class="body" style="width: {{portraitSecondWidth}}px; height: {{portraitSecondHeight}}px; top: {{portraitSecondTop}}px; left: {{portraitSecondLeft}}px;" src="{{bodySecond}}"></image>
+      <image if="{{bodyThird !== ''}}" class="body" style="width: {{portraitThirdWidth}}px; height: {{portraitThirdHeight}}px; top: {{portraitThirdTop}}px; left: {{portraitThirdLeft}}px;" src="{{bodyThird}}"></image>
+    </div>
+    <div if="{{mode === 'play'}}" class="dialogue-panel" style="top: {{artHeight}}px; height: {{panelHeight}}px;">
+      <div class="dialogue-edge"></div>
+      <div class="speaker-row"><text class="speaker" style="font-family: {{speakerFont}};">{{speaker}}</text><text if="{{hasObjection}}" class="objection-hint">点击词语反驳</text></div>
+      <scroll id="dialogue-scroll" class="dialogue-scroll" scroll-y="true" ontouchstart="dialogueTouchStart" ontouchmove="dialogueTouchMove" ontouchend="dialogueTouchEnd" ontouchcancel="dialogueTouchEnd" onscroll="dialogueScrolled" onclick="dialogueTap"><text class="dialogue" style="font-size: {{fontSize}}px;font-family: {{dialogueFont}};">{{displayText}}</text></scroll>
+      <div if="{{hasObjection}}" class="objection-words" style="height: {{objectionHeight}}px;"><text for="{{objectionWords}}" tid="key" class="objection-word" style="width: {{$item.width}}px; height: {{objectionHeight}}px; font-size: {{objectionSize}}px;" onclick="rebutWord($item.index,$item.key)">{{$item.text}}</text></div>
+      <div class="toolbar"><text class="tool tool-prev" onclick="goBack">上一句</text><text class="tool tool-menu" onclick="showMenu">菜单</text><text class="tool tool-book" onclick="openBook">魔女手册</text><text class="tool tool-next" onclick="advance">下一句 ›</text></div>
+    </div>
+    <div if="{{mode === 'choice'}}" class="choice-panel">
+      <text class="choice-title">{{choiceTitle}}</text>
+      <scroll class="choice-list" scroll-y="true"><text for="{{options}}" tid="key" class="choice" style="font-family: {{$item.font}};" onclick="pick($idx, $item.key)">{{$item.text}}</text></scroll>
+      <div class="choice-toolbar"><text class="small-action" onclick="showMenu">菜单</text><text class="small-action" onclick="openBook">魔女手册</text></div>
+    </div>
+    <div if="{{mode === 'menu'}}" class="reading-menu">
+      <text class="menu-title">阅读菜单</text>
+      <text class="read-action" onclick="saveGame">保存进度</text>
+      <text class="read-action" onclick="loadGame">读取进度</text>
+      <text class="read-action" style="color: {{hasNextChapter ? '#ffffff' : '#a8bab3'}};" onclick="goNextChapter">下一章 ›</text>
+      <text class="read-action" onclick="toggleAuto">{{autoLabel}}</text>
+      <text class="read-action" onclick="toggleAutoSpeed">{{autoSpeedLabel}}</text>
+      <text class="read-action" onclick="openSettings">阅读设置</text>
+      <text class="read-action" onclick="resume">返回游戏</text>
+      <text class="read-action muted" onclick="toTitle">返回标题</text>
+    </div>
+    <div if="{{mode === 'settings'}}" class="overlay">
+      <text class="menu-title">CONFIG</text>
+      <text class="panel-subtitle">阅读显示设置</text>
+      <text class="menu-action" onclick="toggleSpeed">{{speedLabel}}</text>
+      <text class="menu-action" onclick="toggleFont">{{fontLabel}}</text>
+      <text class="menu-action muted" onclick="closeSettings">返回</text>
+    </div>
+    <div if="{{mode === 'routes' || mode === 'chapters'}}" class="full-panel">
+      <text class="panel-title">{{browseTitle}}</text><text class="panel-subtitle" style="font-family: {{browseFont}};">{{browseLabel}}</text>
+      <div class="slot-list"><div for="{{browseRows}}" tid="key" class="slot-card" onclick="selectBrowse($idx)"><text class="slot-title" style="font-family: {{$item.font}};">{{$item.name}}</text><text class="slot-meta">{{$item.detail}}</text></div></div>
+      <div class="pager"><text class="pager-action" onclick="previousBrowse">‹ 上一页</text><text class="pager-action" onclick="closeBrowse">返回</text><text class="pager-action" onclick="nextBrowse">下一页 ›</text></div>
+    </div>
+    <div if="{{mode === 'slots'}}" class="full-panel">
+      <text class="panel-title">{{slotTitle}}</text>
+      <text class="panel-subtitle">{{slotPageLabel}}</text>
+      <div class="slot-list">
+        <div for="{{slotRows}}" tid="number" class="slot-card" style="background-color: {{$item.occupied ? '#503341' : '#3d2b38'}};" onclick="selectSlot($item.index)">
+          <text class="slot-title">{{$item.title}}</text><text class="slot-meta" style="font-family: {{$item.metaFont}};">{{$item.meta}}</text><text class="slot-preview" style="font-family: {{$item.previewFont}};">{{$item.preview}}</text>
+        </div>
+      </div>
+      <div class="pager"><text class="pager-action" onclick="previousSlotPage">‹ 上一页</text><text class="pager-action" onclick="closeSlots">返回</text><text class="pager-action" onclick="nextSlotPage">下一页 ›</text></div>
+    </div>
+    <div if="{{mode === 'overwrite'}}" class="overlay">
+      <text class="menu-title">{{overwriteTitle}}</text>
+      <text class="confirm-text" style="font-family: {{overwriteFont}};">{{overwriteDetail}}</text>
+      <text class="menu-action" onclick="confirmOverwrite">确认覆盖</text><text class="menu-action muted" onclick="cancelOverwrite">取消</text>
+    </div>
+    <div if="{{mode === 'gallery'}}" class="full-panel">
+      <div class="gallery-header"><text class="gallery-title">GALLERY</text><text class="gallery-chapters" onclick="openChapterRoutes">章节选择 ›</text></div><text class="panel-subtitle">{{galleryPageLabel}}</text>
+      <div class="gallery-row"><div for="{{galleryTop}}" tid="image" class="gallery-card" onclick="viewCg($item.index)"><image class="gallery-thumb" src="{{$item.src}}"></image><text class="gallery-caption" style="font-family: {{$item.font}};">{{$item.label}}</text></div></div>
+      <div class="gallery-row"><div for="{{galleryBottom}}" tid="image" class="gallery-card" onclick="viewCg($item.index)"><image class="gallery-thumb" src="{{$item.src}}"></image><text class="gallery-caption" style="font-family: {{$item.font}};">{{$item.label}}</text></div></div>
+      <div class="pager"><text class="pager-action" onclick="previousGalleryPage">‹ 上一页</text><text class="pager-action" onclick="toTitle">返回标题</text><text class="pager-action" onclick="nextGalleryPage">下一页 ›</text></div>
+    </div>
+    <div if="{{mode === 'cg'}}" class="cg-panel">
+      <image class="cg-image" src="{{cgSrc}}" onclick="cycleCg"></image><text class="cg-caption" style="font-family: {{cgFont}};">{{cgLabel}}</text>
+      <div class="cg-controls"><text class="pager-action" onclick="previousCg">‹ 上一组</text><text class="pager-action" onclick="backToGallery">返回列表</text><text class="pager-action" onclick="nextCg">下一组 ›</text></div>
+    </div>
+    <div if="{{mode === 'book'}}" class="full-panel"><text class="panel-title">魔女手册</text><text class="panel-subtitle">{{bookLabel}}</text><div class="slot-list"><div for="{{bookRows}}" tid="key" class="slot-card" onclick="selectBook($idx)"><text class="slot-title" style="font-family: {{$item.font}};">{{$item.name}}</text><text class="slot-meta">{{$item.detail}}</text></div></div><div class="pager"><text class="pager-action" onclick="previousBook">‹ 上一页</text><text class="pager-action" onclick="closeBook">返回</text><text class="pager-action" onclick="nextBook">下一页 ›</text></div></div>
+    <div if="{{mode === 'bookDetail'}}" class="full-panel"><text class="panel-title" style="font-family: {{dialogueFont}};">{{bookName}}</text><scroll class="book-scroll" scroll-y="true"><image if="{{bookImage !== ''}}" class="book-image" src="{{bookImage}}"></image><text class="book-text" style="font-family: {{dialogueFont}};">{{bookText}}</text></scroll><text class="menu-action" onclick="closeBookDetail">返回手册</text></div>
+    <div if="{{mode === 'end'}}" class="end-panel"><text class="game-title">{{endingLabel}}</text><text class="subtitle">故事阅读完毕</text><text class="action" onclick="toTitle">返回标题</text></div>
+    <div if="{{mode === 'error'}}" class="overlay"><text class="menu-title">暂时无法继续</text><text class="error-text">{{errorText}}</text><text class="action" onclick="toTitle">返回标题</text></div>
+    <text if="{{loading}}" class="loading">加载中…</text>
+  </div>
+</template>
+<script>
+import file from '@system.file';
+import storage from '@system.storage';
+import prompt from '@system.prompt';
+import {newState,restore,readFrame,readChapterSkip,next,nextChapter,choose,previous,previewMap,setBookCatalog,bookEntries,objectTo} from '../../common/engine.js';
+import {SLOT_COUNT,LEGACY_KEY,slotKey,decodeSave,createSave,slotRow} from '../../common/saves.js';
+import {catalog} from '../../common/catalog.js';
+import {imagePath,bookImages} from '../../common/assets.js';
+import {groupGallery,stepVariant} from '../../common/gallery.js';
+import {textFont} from '../../common/text-font.js';
+import {portraitBox,configurePortraitLayouts,clearPortraitLayouts} from '../../common/portrait-layout.js';
+import {autoDelay,canAutoAdvance,createAutoplay} from '../../common/autoplay.js';
+import {createProgramStore} from '../../common/program-store.js';
+import {residentProgram,configureResident,clearResident} from '../../common/runtime-helpers.js';
+export default {
+  private:{mode:'title',titleSrc:'/common/ui/title-1.jpg',autoEnabled:false,autoSpeed:1,autoLabel:'自动播放：关',autoSpeedLabel:'自动速度：标准',backgroundSrc:'/common/title_bg.png',bodySrc:'',bodySecond:'',bodyThird:'',portraitWidth:200,portraitLeft:116,portraitSecondLeft:216,speaker:'',displayText:'',speakerFont:'sans-serif',dialogueFont:'sans-serif',browseFont:'sans-serif',overwriteFont:'sans-serif',cgFont:'sans-serif',
+    options:[],hasObjection:false,objectionWords:[],objectionHeight:52,objectionSize:22,artHeight:286,panelHeight:228,choiceTitle:'作出选择',bookRows:[],bookLabel:'',bookName:'',bookText:'',bookImage:'',loading:false,errorText:'',hasNextChapter:true,afterUnlocked:false,fontSize:24,textSpeed:0,speedLabel:'显示速度：即时',fontLabel:'字号：标准',progressLabel:'红米手表 5 · 图文版',
+    portraitHeight:286,portraitTop:0,portraitSecondWidth:200,portraitSecondHeight:286,portraitSecondTop:0,portraitThirdWidth:144,portraitThirdHeight:286,portraitThirdTop:0,portraitThirdLeft:288,
+    slotTitle:'',slotPage:0,slotPageLabel:'',slotRows:[],storageBusy:false,overwriteTitle:'',overwriteDetail:'',endingLabel:'本篇阅读完毕',
+    galleryPage:0,galleryPageLabel:'',galleryTop:[],galleryBottom:[],cgIndex:0,cgVariant:0,cgSrc:'',cgLabel:'',browseRows:[],browseTitle:'',browseLabel:'',browsePage:0},
+  onInit(){
+    this.session=newState();this.cachedChapter=0;this.ops=[];this._opsPlan=null;this._runtimeReady=false;this._runtimeReadToken=0;this._programs=createProgramStore(residentProgram);this._manualBoundary=false;this.loadSequence=0;this.timer=null;this._scrollTimer=null;this._scrollEpoch=0;this._dialogueTouching=false;this.fullText='';this.resumeMode='play';
+    this._slotsSequence=0;this._gallerySequence=0;this._slotData=[];this._galleryCatalog=[];this._galleryTotal=0;this._slotsReturnMode='title';this._slotRole='load';
+    this.autoClock=createAutoplay(setTimeout,clearTimeout);this.autoEnabled=false;this._titleProgress=0;this._titleProgressLoaded=false;this._titleWriteBusy=false;this._titleDirty=false;this._progressReady=false;this.loading=true;
+    storage.get({complete:()=>{},key:'manosaba_rw5_title_progress_v1',success:data=>{const saved=Number(data)||0;this._titleProgress=Math.max(this._titleProgress,saved);this._titleProgressLoaded=true;this.refreshTitle();if(this._titleProgress>saved)this.writeProgress();},fail:()=>{this._titleProgressLoaded=true;this._titleReadFailed=true;this.refreshTitle();if(this._titleProgress>=6)this.writeProgress();}});
+    storage.get({complete:()=>{},key:'manosaba_rw5_settings_v1',success:data=>{try{const s=JSON.parse(data);this.fontSize=s.fontSize===28?28:24;this.textSpeed=s.textSpeed===30?30:0;this.autoSpeed=s.autoSpeed===0?0:s.autoSpeed===2?2:1;this.refreshSettings();}catch(e){}},fail:()=>{}});
+    this.readProgress();
+    console.log('MANOSABA_RW5 title ready');
+  },
+  backgroundLoaded(){console.log('MANOSABA_RW5 background loaded',this.mode,this.backgroundSrc);},
+  backgroundError(){console.log('MANOSABA_RW5 background failed',this.mode,this.backgroundSrc);},
+  clearTyping(){this.clearScrollResume();if(this.autoClock)this.autoClock.cancel();if(this.timer!==null){clearTimeout(this.timer);this.timer=null;}},
+  clearScrollResume(){this._scrollEpoch=(this._scrollEpoch||0)+1;if(this._scrollTimer!==null&&this._scrollTimer!==undefined){clearTimeout(this._scrollTimer);this._scrollTimer=null;}},
+  resumeAfterScroll(){this.clearScrollResume();const epoch=this._scrollEpoch;this._scrollTimer=setTimeout(()=>{this._scrollTimer=null;if(epoch!==this._scrollEpoch||this._dialogueTouching||this._hidden||this.mode!=='play')return;this._readPause=false;this.scheduleAuto();},180);},
+  onShow(){this._hidden=false;this._readPause=false;if((this._chapterSkip||this._framePending)&&this.timer===null)this.renderFrame();else this.scheduleAuto();},
+    onHide(){this._hidden=true;this._dialogueTouching=false;this.clearTyping();if(!this._chapterSkip&&this.mode==='play')this.displayText=this.fullText;},
+  onDestroy(){this.autoEnabled=false;this.clearTyping();if(this._programs)this._programs.clear();clearResident();clearPortraitLayouts();this._runtimeReadToken++;this.ops=[];this._opsPlan=null;this.loadSequence++;this._slotsSequence++;this._gallerySequence++;},
+  readRuntime(){this.loading=true;const token=++this._runtimeReadToken;let pending=2,failed=false;const ready=()=>{if(token!==this._runtimeReadToken||failed)return;if(--pending===0){this._runtimeReady=true;this.readProgress();}};const bad=()=>{if(token===this._runtimeReadToken&&!failed){failed=true;this.fail('运行目录读取失败');}};
+    file.readText({uri:'/common/runtime-helpers.txt',complete:()=>{},success:data=>{if(token!==this._runtimeReadToken)return;try{configureResident(JSON.parse(data.text));ready();}catch(e){bad();}},fail:bad});
+    file.readText({uri:'/common/portrait-layouts.txt',complete:()=>{},success:data=>{if(token!==this._runtimeReadToken)return;try{configurePortraitLayouts(JSON.parse(data.text));ready();}catch(e){bad();}},fail:bad});
+  },
+  readProgress(){if(!this._runtimeReady){this.readRuntime();return;}this.loading=true;file.readText({uri:'/common/book.txt',success:data=>{try{setBookCatalog(JSON.parse(data.text));this._progressReady=true;this.loading=false;console.log('MANOSABA_RW5 book ready');}catch(e){this.fail(e.message);}},fail:()=>this.fail('手册资源读取失败'),complete:()=>{}});},
+  syncProgress(){const progress=Math.max(this._titleProgress||0,Number(this.session.variables.g_gameProgress)||0);if(progress!==this._titleProgress){this._titleProgress=progress;this.writeProgress();}},
+  refreshTitle(){this.titleSrc='/common/ui/title-'+((this._titleProgress||0)>=6?2:1)+'.jpg';},
+  writeProgress(){if(!this._titleProgressLoaded||(this._titleReadFailed&&this._titleProgress<6))return;if(this._titleWriteBusy){this._titleDirty=true;return;}this._titleWriteBusy=true;this._titleDirty=false;storage.set({complete:()=>{},key:'manosaba_rw5_title_progress_v1',value:String(this._titleProgress||0),success:()=>{this._titleWriteBusy=false;if(this._titleDirty)this.writeProgress();},fail:()=>{this._titleWriteBusy=false;this._titleDirty=true;}});},
+  autoAllowed(){return canAutoAdvance({enabled:this.autoEnabled,mode:this.mode,loading:this.loading,hidden:this._hidden,dragged:this._readPause||this._dialogueTouching,typing:this.timer!==null,interaction:this._manualBoundary||this.hasObjection||!!(this.session.links&&this.session.links.length)});},
+  scheduleAuto(){if(!this.autoClock||!this.autoAllowed()||this.displayText!==this.fullText)return;this.autoClock.schedule(autoDelay(this.autoSpeed,this.fullText.length),()=>this.autoAllowed(),()=>{console.log('MANOSABA_RW5 auto advance',this.session.chapter,this.session.cursor);next(this.session);this.renderFrame();});},
+  toggleAuto(){this.autoEnabled=!this.autoEnabled;this.clearTyping();this.refreshSettings();},
+  toggleAutoSpeed(){this.autoSpeed=(this.autoSpeed+1)%3;this.refreshSettings();this.persistSettings();},
+  startNew(){if(this.loading)return;this.clearTyping();this._chapterSkip=null;this.session=newState(catalog.initial,true);this.cachedChapter=0;this._autoHops=0;this.renderFrame();},
+  openSettings(){if(this.loading)return;this._settingsReturn=this.mode;this.clearTyping();this.mode='settings';},
+  closeSettings(){this.mode=this._settingsReturn||'title';this.scheduleAuto();},
+  exitApplication(){this.autoEnabled=false;this.clearTyping();console.log('MANOSABA_RW5 exit');this.$app.exit();},
+  openChapterRoutes(){if(this.loading)return;this._browseReturn=this.mode;this.clearTyping();this._browseFromRoutes=true;this._browseRoute=0;this.mode='routes';this.browsePage=0;this.refreshBrowse();},
+  openRoutes(){if(this.loading)return;this.clearTyping();this._browseFromRoutes=false;this._browseRoute=0;this.mode='chapters';this.browsePage=0;this.refreshBrowse();},
+  visibleText(text){return String(text||'').replace(/・/g,'·');},
+  characterName(name){return name;},
+  visibleOptions(items){this._choiceEpoch=(this._choiceEpoch||0)+1;return items.map((item,i)=>{const text=this.visibleText(item.text);return Object.assign({},item,{text,key:this.session.chapter+':'+this.session.cursor+':'+this._choiceEpoch+':'+i,font:textFont(text)});});},
+  refreshBrowse(){const routes=this.mode==='routes';this._browseItems=routes?catalog.routes:catalog.chapters.filter(x=>x.route===this._browseRoute);this.browseTitle=routes?'选择路线':'选择章节';const start=this.browsePage*4;this.browseRows=this._browseItems.slice(start,start+4).map((item,i)=>({key:(routes?'route:':'chapter:'+this._browseRoute+':')+(start+i),index:start+i,name:this.visibleText(item.name),font:textFont(item.name),detail:routes?item.scenes.length+' 个章节':'点击开始阅读'}));this.browseLabel=(routes?'章节阅读 · ':this.visibleText(catalog.routes[this._browseRoute].name)+' · ')+(this.browsePage+1)+' / '+Math.ceil(this._browseItems.length/4);this.browseFont=textFont(this.browseLabel);},
+  previousBrowse(){if(this.browsePage>0){this.browsePage--;this.refreshBrowse();}},
+  nextBrowse(){if(this.browsePage<Math.ceil(this._browseItems.length/4)-1){this.browsePage++;this.refreshBrowse();}},
+  selectBrowse(row){const index=this.browsePage*4+row;if(!this._browseItems[index])return;if(this.mode==='routes'){this._browseRoute=index;this.browsePage=0;this.mode='chapters';this.refreshBrowse();return;}const item=this._browseItems[index];this.session=newState(item.id);this.cachedChapter=0;this._autoHops=0;this.renderFrame();},
+  closeBrowse(){if(this.mode==='chapters'&&this._browseFromRoutes){this.mode='routes';this.browsePage=0;this.refreshBrowse();return;}if(this._browseReturn==='gallery'){this.mode='gallery';return;}this.toTitle();},
+  continueGame(){this.openSlots('load');},
+  activateProgram(chapter){
+    const block=Math.floor(this.session.cursor/512),key=chapter+':'+block;
+    if(this.cachedChapter===key&&this.ops)return true;
+    const program=this._programs.get(key,block*512);if(!program)return false;
+    this.ops=program.ops;this.opsBase=program.base;this._opsPlan=program.plan;this.cachedChapter=key;return true;
+  },
+  readChapter(chapter,done){
+    const block=Math.floor(this.session.cursor/512),key=chapter+':'+block;
+    if(this.activateProgram(chapter)){this.loading=!!this._chapterSkip;done();return;}
+    this.loading=true;const seq=++this.loadSequence;
+    file.readText({complete:()=>{},uri:'/common/story/'+chapter+'/'+block+'.txt',success:data=>{
+      if(seq!==this.loadSequence)return;
+      try{const program=this._programs.put(key,JSON.parse(data.text),block*512,data.text.length);this.ops=program.ops;this.opsBase=program.base;this._opsPlan=program.plan;this.cachedChapter=key;this.loading=!!this._chapterSkip;done();}
+      catch(e){this.fail(e.message);}
+    },fail:(data,code)=>{if(seq===this.loadSequence)this.fail('第 '+chapter+' 章读取失败：'+code+' '+String(data||'').slice(0,100));}});
+  },
+  renderFrame(){
+    this._framePending=true;this.clearTyping();this.readChapter(this.session.chapter,()=>{
+      if(this._hidden)return;
+      try{
+        let f;let turns=0;const started=Date.now();
+        while(true){
+          f=this._chapterSkip?readChapterSkip(this.ops,this.session,this._chapterSkip,this.opsBase,catalog.scenes[String(this.session.chapter)].length,this._opsPlan):readFrame(this.ops,this.session,this.opsBase,catalog.scenes[String(this.session.chapter)].length,this._opsPlan);
+          this.syncProgress();if(f.type!=='jump'&&f.type!=='yield')break;
+          this.loading=true;this._autoHops=(this._autoHops||0)+1;if(this._autoHops>1000)throw new Error('此章节无法继续，故事阅读完毕');
+          if(++turns<6&&Date.now()-started<12&&this.activateProgram(this.session.chapter))continue;
+          this.timer=setTimeout(()=>{this.timer=null;this.renderFrame();},0);return;
+        }
+        const skip=this._chapterSkip,current=this.ops[this.session.cursor-this.opsBase];
+        this._manualBoundary=!!((skip&&skip.reason==='trial')||(current&&current.op==='pause'));
+        if(skip&&this._skipStats){const stats=this._programs.stats();this._lastSkip={reason:skip.reason||f.type,autoEnabled:this.autoEnabled,cache:stats,milliseconds:Date.now()-this._skipStats.at,fileReads:stats.loads-this._skipStats.loads,cacheHits:stats.hits-this._skipStats.hits,residentHits:stats.residentHits-this._skipStats.residentHits};console.log('MANOSABA_RW5 skip completed',JSON.stringify(this._lastSkip));this._skipStats=null;}
+        this._autoHops=0;this._chapterSkip=null;this._framePending=false;this.loading=false;
+        const ui=this._opsPlan&&this._opsPlan.objections[this.session.cursor-this.opsBase];this.artHeight=ui?ui.artHeight:286;this.panelHeight=ui?ui.panelHeight:228;this.objectionWords=ui?ui.words:[];this.objectionHeight=ui?ui.height:52;this.objectionSize=ui?ui.fontSize:22;
+        this.backgroundSrc=imagePath(this.session.background);
+        const bodies=this.session.bodies||[];this.bodySrc=bodies[0]?imagePath(bodies[0]):'';this.bodySecond=bodies[1]?imagePath(bodies[1]):'';this.bodyThird=bodies[2]?imagePath(bodies[2]):'';
+        const first=portraitBox(this.bodySrc,bodies.length,0,this.artHeight),second=portraitBox(this.bodySecond,bodies.length,1,this.artHeight),third=portraitBox(this.bodyThird,bodies.length,2,this.artHeight);
+        this.portraitWidth=first.width;this.portraitHeight=first.height;this.portraitTop=first.top;this.portraitLeft=first.left;
+        this.portraitSecondWidth=second.width;this.portraitSecondHeight=second.height;this.portraitSecondTop=second.top;this.portraitSecondLeft=second.left;
+        this.portraitThirdWidth=third.width;this.portraitThirdHeight=third.height;this.portraitThirdTop=third.top;this.portraitThirdLeft=third.left;
+        this.hasNextChapter=!this.session.ended;
+        this.hasObjection=!!(f.links&&f.links.length);
+        if(f.type==='choice'){this._objectionMenu=false;this.choiceTitle=f.title||'作出选择';this.options=this.visibleOptions(f.items);this.mode='choice';console.log('MANOSABA_RW5 choice',this.session.chapter,this.session.cursor);return;}
+        if(f.type==='end'){this.autoEnabled=false;this.refreshSettings();this.endingLabel=f.kind==='bad'?'BAD END':f.kind==='trialFail'?'审判失败':'本段剧情结束';this.mode='end';console.log('MANOSABA_RW5 ending',this.session.chapter,f.kind);return;}
+        this.mode='play';this.speaker=this.characterName(this.visibleText(f.speaker));this.fullText=(this._opsPlan&&this._opsPlan.display[this.session.cursor-this.opsBase])||f.text;this.speakerFont=textFont(this.speaker);this.dialogueFont=textFont(this.fullText);this.displayText='';
+        this._dialogueDragged=false;this._dialogueTouch=null;this._dialogueTouching=false;this._readPause=false;
+        try{this.$element('dialogue-scroll').scrollTo({top:0,behavior:'instant'});}catch(e){}
+        console.log('MANOSABA_RW5 frame',this.session.chapter,this.session.cursor);
+        const interval=this.autoEnabled?30:this.textSpeed;
+        if(interval===0){this.displayText=this.fullText;this.scheduleAuto();return;}
+        const tick=()=>{this.displayText=this.fullText.slice(0,this.displayText.length+1);if(this.displayText.length<this.fullText.length)this.timer=setTimeout(tick,interval);else{this.timer=null;this.scheduleAuto();}};tick();
+      }catch(e){this.fail(e.message);}
+    });
+  },
+  advance(){if(this.loading||this.mode!=='play')return;this._manualBoundary=false;this._readPause=false;if(this.timer!==null){this.clearTyping();this.displayText=this.fullText;this.scheduleAuto();return;}this.clearTyping();next(this.session);this.renderFrame();},
+  dialogueTouchStart(event){this.clearScrollResume();this._dialogueTouching=true;if(this.autoClock)this.autoClock.cancel();const touch=event.touches&&event.touches[0];this._dialogueDragged=false;this._dialogueTouch=touch?{x:touch.pageX,y:touch.pageY}:null;},
+  dialogueTouchMove(event){const touch=event.touches&&event.touches[0],start=this._dialogueTouch;if(touch&&start&&(Math.abs(touch.pageX-start.x)>10||Math.abs(touch.pageY-start.y)>10)){this._dialogueDragged=true;this._readPause=true;this.clearTyping();this.displayText=this.fullText;}},
+  dialogueTouchEnd(){this._dialogueTouching=false;this._dialogueTouch=null;if(this._dialogueDragged)this.resumeAfterScroll();else this.scheduleAuto();},
+  dialogueTap(){if(this._dialogueDragged)return;this.advance();},
+  dialogueScrolled(event){if(this._dialogueDragged){this._readPause=true;this.clearTyping();this.displayText=this.fullText;if(!this._dialogueTouching)this.resumeAfterScroll();}console.log('MANOSABA_RW5 dialogue scroll',this.session.chapter,this.session.cursor,event.scrollY);},
+  renderMap(frame){this.loading=true;const seq=++this.loadSequence;file.readText({complete:()=>{},uri:'/common/map-preview.txt',success:data=>{if(seq!==this.loadSequence)return;try{const choices=previewMap(JSON.parse(data.text),this.session,frame);if(!choices.length)throw new Error('此地图阶段暂无支持的剧情选项，请返回标题选择其他篇章');this.options=this.visibleOptions(choices);this.mode='choice';this.loading=false;console.log('MANOSABA_RW5 map ready',this.session.chapter,this.session.cursor,choices.map(x=>x.value).join(','));}catch(e){this.fail(e.message);}},fail:()=>{if(seq===this.loadSequence)this.fail('地图选项读取失败');}});},
+  goNextChapter(){if(this.loading||this.mode!=='menu')return;if(this.resumeMode==='choice'){this.mode='choice';this.toast('请先处理当前选项或反驳关键词');return;}if(this.session.links.length){this.mode='play';this.displayText=this.fullText;this.toast('请先处理当前反驳关键词');return;}this.clearTyping();this._manualBoundary=false;const stats=this._programs.stats();this._skipStats={at:Date.now(),loads:stats.loads,hits:stats.hits,residentHits:stats.residentHits};this._chapterSkip=nextChapter(this.session);if(!this._chapterSkip){this.toast('本篇已结束');return;}this._autoHops=0;this.loading=true;this.renderFrame();console.log('MANOSABA_RW5 safe chapter skip',this.session.chapter,this.session.cursor);},
+  pick(index,key){if(this.mode!=='choice'||this.loading||!this.options[index]||(key&&key!==this.options[index].key))return;if(this._objectionMenu){if(index===this.options.length-1){this._objectionMenu=false;this.renderFrame();return;}objectTo(this.session,index);this._objectionMenu=false;}else choose(this.session,this.options[index],index);this.renderFrame();},
+  rebutWord(index,key){if(this.loading||this.mode!=='play'||!this.hasObjection||!this.session.links[index]||!this.objectionWords[index]||this.objectionWords[index].key!==key)return;this.clearTyping();console.log('MANOSABA_RW5 objection word',this.session.links[index].text);objectTo(this.session,index);this.renderFrame();},
+  openObjections(){if(this.loading||this.mode!=='play'||!this.hasObjection)return;this.clearTyping();this._objectionMenu=true;this.choiceTitle='选择反驳关键词';this.options=this.visibleOptions(this.session.links.concat([{text:'返回发言'}]));this.mode='choice';},
+  openBook(){if(this.loading)return;this.clearTyping();this.displayText=this.fullText;this._bookReturn=this.mode;this._bookItems=bookEntries(this.session);this._bookPage=0;this.refreshBook();this.mode='book';},
+  refreshBook(){const start=this._bookPage*4;this.bookRows=this._bookItems.slice(start,start+4).map(x=>Object.assign({},x,{font:textFont(x.name),detail:{Clue:'证据',Profile:'人物',Rule:'规则',Note:'笔记',Map:'地图'}[x.category]+' · 版本 '+x.version}));this.bookLabel=this._bookItems.length+' 条 · '+(this._bookPage+1)+' / '+Math.max(1,Math.ceil(this._bookItems.length/4));},
+  previousBook(){if(this._bookPage>0){this._bookPage--;this.refreshBook();}},
+  nextBook(){if(this._bookPage<Math.ceil(this._bookItems.length/4)-1){this._bookPage++;this.refreshBook();}},
+  selectBook(i){const item=this._bookItems[this._bookPage*4+i];if(!item)return;this.bookName=item.name;this.bookImage=bookImages[item.category+':'+item.id]?imagePath(bookImages[item.category+':'+item.id]):'';this.bookText=item.text||'暂无详细记录';this.dialogueFont=textFont(this.bookText+this.bookName);this.mode='bookDetail';},
+  closeBookDetail(){this.mode='book';},closeBook(){this.mode=this._bookReturn||'menu';this._readPause=false;this.scheduleAuto();},
+  goBack(){if(this.loading||this.mode!=='play')return;this.autoEnabled=false;this.refreshSettings();this.clearTyping();if(previous(this.session)){this.renderFrame();}else this.toast('已经是第一句');},
+  showMenu(){if(this.loading||(this.mode!=='play'&&this.mode!=='choice'))return;this.clearTyping();this.displayText=this.fullText;this.resumeMode=this.mode;this.mode='menu';console.log('MANOSABA_RW5 menu',this.session.chapter);},
+  resume(){if(this.resumeMode==='choice'){this.mode='choice';return;}this.mode='play';this.displayText=this.fullText;this._manualBoundary=false;this._readPause=false;this._dialogueTouching=false;this.scheduleAuto();},
+  swipe(event){
+    if(this.mode==='gallery'){if(event.direction==='left')this.nextGalleryPage();if(event.direction==='right')this.previousGalleryPage();return;}
+    if(event.direction==='right'&&(this.mode==='play'||this.mode==='choice'))this.showMenu();
+  },
+  saveGame(){this.writeProgress();this.openSlots('save');},
+  loadGame(){this.openSlots('load');},
+  openSlots(role){
+    if(this.loading||this.storageBusy)return;this.clearTyping();this._slotsReturnMode=this.mode;this._slotRole=role;
+    this._pendingSave=role==='save'?createSave(this.session,this.resumeMode,Date.now()):null;
+    this.slotTitle=role==='save'?'选择保存栏位':'选择读取栏位';this.slotPage=0;this.slotRows=[];this.mode='slots';this.loading=true;
+    const seq=++this._slotsSequence;this._slotData=Array(SLOT_COUNT).fill(null);
+    const ready=()=>{if(seq!==this._slotsSequence)return;this.loading=false;this.refreshSlotRows();console.log('MANOSABA_RW5 slots ready',role);};
+    const finish=index=>{
+      if(seq!==this._slotsSequence)return;
+      if(index+1<SLOT_COUNT){setTimeout(()=>readSlot(index+1),0);return;}
+      if(this._slotData[0]){ready();return;}
+      storage.get({complete:()=>{},key:LEGACY_KEY,default:'',success:data=>{if(seq!==this._slotsSequence)return;try{const old=decodeSave(data);if(old){old.legacy=true;this._slotData[0]=old;}}catch(e){}ready();},fail:ready});
+    };
+    const readSlot=i=>{if(seq!==this._slotsSequence)return;storage.get({complete:()=>{},key:slotKey(i),default:'',success:data=>{if(seq!==this._slotsSequence)return;try{this._slotData[i]=decodeSave(data);}catch(e){this._slotData[i]={invalid:true};}finish(i);},fail:()=>{if(seq!==this._slotsSequence)return;this._slotData[i]={invalid:true};finish(i);}});};
+    readSlot(0);
+  },
+  refreshSlotRows(){const start=this.slotPage*4;const rows=[];for(let i=start;i<Math.min(start+4,SLOT_COUNT);i++)rows.push(slotRow(i,this._slotData[i]));this.slotRows=rows;this.slotPageLabel=SLOT_COUNT+' 个栏位 · 第 '+(this.slotPage+1)+' / '+Math.ceil(SLOT_COUNT/4)+' 页';},
+  previousSlotPage(){if(this.loading||this.slotPage===0)return;this.slotPage--;this.refreshSlotRows();},
+  nextSlotPage(){if(this.loading||this.slotPage>=Math.ceil(SLOT_COUNT/4)-1)return;this.slotPage++;this.refreshSlotRows();},
+  closeSlots(){if(this.storageBusy)return;this._slotsSequence++;this.loading=false;this.mode=this._slotsReturnMode;this.scheduleAuto();},
+  selectSlot(index){
+    if(this.loading||this.storageBusy||this.mode!=='slots'||index<0||index>=SLOT_COUNT)return;
+    const saved=this._slotData[index];
+    if(this._slotRole==='load'){
+      if(!saved){this.toast('这个栏位还没有存档');return;}if(saved.invalid){this.toast('这个存档无法读取');return;}
+      try{this.session=restore(saved.state);this.cachedChapter=0;this._slotsSequence++;this.renderFrame();console.log('MANOSABA_RW5 slot loaded',index+1,this.session.chapter,this.session.cursor);}catch(e){this.toast(e.message);}return;
+    }
+    this._pendingSlotIndex=index;
+    if(saved){const row=slotRow(index,saved);this.overwriteTitle='覆盖'+row.title+'？';this.overwriteDetail=row.meta+'\n覆盖后将保存当前进度。';this.overwriteFont=textFont(this.overwriteDetail);this.mode='overwrite';console.log('MANOSABA_RW5 overwrite',index+1);return;}
+    this.commitSlot();
+  },
+  confirmOverwrite(){if(this.mode==='overwrite')this.commitSlot();},
+  cancelOverwrite(){if(!this.storageBusy)this.mode='slots';},
+  commitSlot(){
+    if(this.storageBusy||!this._pendingSave)return;
+    const index=this._pendingSlotIndex,seq=this._slotsSequence,payload=this._pendingSave;payload.savedAt=Date.now();this.storageBusy=true;this.loading=true;
+    storage.set({complete:()=>{},key:slotKey(index),value:JSON.stringify(payload),success:()=>{
+      if(seq!==this._slotsSequence)return;this._slotData[index]=payload;this.storageBusy=false;this.loading=false;this._slotsSequence++;this.mode=this.resumeMode;
+      this.scheduleAuto();this.toast('已保存到存档 '+('0'+(index+1)).slice(-2));console.log('MANOSABA_RW5 slot saved',index+1,payload.state.chapter,payload.state.cursor);
+    },fail:()=>{if(seq!==this._slotsSequence)return;this.storageBusy=false;this.loading=false;this.toast('保存失败，请重试');}});
+  },
+  openGallery(){
+    if(this.loading)return;this.clearTyping();this.mode='gallery';
+    if(this._galleryCatalog.length){this.refreshGallery();return;}
+    this.loading=true;const seq=++this._gallerySequence;
+    file.readText({complete:()=>{},uri:'/common/gallery.txt',success:data=>{
+      if(seq!==this._gallerySequence)return;
+      try{const items=JSON.parse(data.text);if(!Array.isArray(items)||!items.length)throw new Error('CG 目录为空');this._galleryCatalog=groupGallery(items);this._galleryTotal=items.length;this.galleryPage=0;this.loading=false;this.refreshGallery();console.log('MANOSABA_RW5 gallery ready',this._galleryCatalog.length,items.length);}catch(e){this.fail(e.message);}
+    },fail:(data,code)=>{if(seq===this._gallerySequence)this.fail('CG 目录读取失败：'+code);}});
+  },
+  refreshGallery(){const start=this.galleryPage*4;const items=this._galleryCatalog.slice(start,start+4).map((item,i)=>({image:item.image,label:item.label+'\n'+item.variants.length+' 张',index:start+i,font:textFont(item.label+'张'),src:imagePath(item.image)}));this.galleryTop=items.slice(0,2);this.galleryBottom=items.slice(2,4);this.galleryPageLabel=this._galleryCatalog.length+' 组 · '+this._galleryTotal+' 张 · 第 '+(this.galleryPage+1)+' / '+Math.ceil(this._galleryCatalog.length/4)+' 页';},
+  previousGalleryPage(){if(this.loading||this.galleryPage===0)return;this.galleryPage--;this.refreshGallery();},
+  nextGalleryPage(){if(this.loading||this.galleryPage>=Math.ceil(this._galleryCatalog.length/4)-1)return;this.galleryPage++;this.refreshGallery();},
+  viewCg(index){if(this.loading||index<0||index>=this._galleryCatalog.length)return;this.cgIndex=index;this.cgVariant=0;this.mode='cg';this.renderCg();},
+  renderCg(){const group=this._galleryCatalog[this.cgIndex],item=group.variants[this.cgVariant];this.cgSrc=imagePath(item.image);this.cgLabel=group.label+(group.variants.length>1?' · 差分 '+(this.cgVariant+1)+' / '+group.variants.length+' · 点击切换':'');this.cgFont=textFont(this.cgLabel);console.log('MANOSABA_RW5 cg',this.cgIndex+1,this.cgVariant+1,item.image);},
+  cycleCg(){if(this.mode!=='cg'||this.loading)return;const count=this._galleryCatalog[this.cgIndex].variants.length;if(count<2)return;this.cgVariant=stepVariant(this.cgVariant,1,count);this.renderCg();},
+  previousCg(){if(this.cgIndex>0)this.viewCg(this.cgIndex-1);},
+  nextCg(){if(this.cgIndex<this._galleryCatalog.length-1)this.viewCg(this.cgIndex+1);},
+  backToGallery(){this.galleryPage=Math.floor(this.cgIndex/4);this.refreshGallery();this.mode='gallery';},
+  refreshSettings(){this.autoLabel='自动播放：'+(this.autoEnabled?'开':'关');this.autoSpeedLabel='自动速度：'+['慢','标准','快'][this.autoSpeed];this.speedLabel=this.textSpeed===0?'显示速度：即时':'显示速度：逐字';this.fontLabel=this.fontSize===28?'字号：大':'字号：标准';},
+  persistSettings(){storage.set({complete:()=>{},key:'manosaba_rw5_settings_v1',value:JSON.stringify({fontSize:this.fontSize,textSpeed:this.textSpeed,autoSpeed:this.autoSpeed}),success:()=>{},fail:()=>{}});},
+  toggleSpeed(){this.textSpeed=this.textSpeed===0?30:0;this.refreshSettings();this.persistSettings();},
+  toggleFont(){this.fontSize=this.fontSize===24?28:24;this.refreshSettings();this.persistSettings();},
+  toTitle(){if(this.storageBusy)return;this.autoEnabled=false;this.refreshSettings();this._chapterSkip=null;this._skipStats=null;this._manualBoundary=false;this._programs.clear();this.cachedChapter=0;this.ops=[];this._opsPlan=null;this._framePending=false;this.syncProgress();this.writeProgress();this.clearTyping();this.loadSequence++;this._slotsSequence++;this._gallerySequence++;this.loading=false;this.mode='title';this.refreshTitle();this.backgroundSrc='/common/title_bg.png';this.bodySrc='';this.bodySecond='';this.bodyThird='';if(!this._progressReady)this.readProgress();},
+  toast(message){prompt.showToast({message,duration:1500,success:()=>{},fail:()=>{},complete:()=>{}});},
+  fail(message){this.autoEnabled=false;this.refreshSettings();this._chapterSkip=null;this._framePending=false;this.clearTyping();this.loading=false;this.mode='error';this.errorText=message;console.error('MANOSABA_RW5 error',message);}
+}
+</script>
+<style>
+@font-face {font-family:manosabafont;src:url('/common/manosaba.otf');}
+.page{font-family:manosabafont;width:432px;height:514px;background-color:#201820;flex-direction:column;}
+.system-backdrop{width:432px;height:514px;}
+.title-screen{position:absolute;top:0px;left:0px;width:432px;height:514px;}
+.title-art{position:absolute;top:0px;left:0px;width:432px;height:514px;object-fit:cover;}
+.title-logo{position:absolute;top:18px;left:22px;width:258px;height:94px;object-fit:contain;}
+.title-menu{position:absolute;top:330px;left:26px;width:380px;height:176px;flex-direction:column;}
+.title-primary{width:380px;height:54px;margin-bottom:10px;object-fit:contain;}
+.title-button-row{width:380px;height:48px;margin-bottom:8px;justify-content:space-between;align-items:center;}
+.title-button{width:185px;height:48px;object-fit:contain;}
+.gallery-header{width:396px;height:40px;justify-content:space-between;align-items:center;}
+.gallery-title{width:160px;height:36px;font-size:28px;color:#f3ddd3;}
+.gallery-chapters{width:190px;height:36px;font-size:21px;color:#ecd5de;text-align:right;}
+.art{position:absolute;top:0px;left:0px;width:432px;height:286px;justify-content:center;align-items:center;background-color:#241b27;}
+.art-fill{position:absolute;top:0px;left:0px;width:432px;height:286px;}
+.background{width:432px;height:286px;object-fit:contain;}
+.body{position:absolute;top:0px;left:116px;width:200px;height:286px;object-fit:contain;}
+.dialogue-panel{position:absolute;top:286px;left:0px;width:432px;height:228px;flex-direction:column;padding:12px 18px;background-color:#30212c;}
+.dialogue-edge{position:absolute;top:0px;left:18px;width:396px;height:1px;background-color:#b3848d;}
+.speaker-row{height:30px;justify-content:space-between;align-items:center;}
+.speaker{width:200px;font-size:22px;color:#ffffff;}
+
+.dialogue-scroll{width:396px;height:128px;flex-direction:column;}
+.dialogue{width:396px;flex-shrink:0;lines:-1;color:#ffffff;line-height:34px;text-align:left;}
+.toolbar{height:44px;width:396px;justify-content:space-between;align-items:center;}
+.tool{height:44px;font-size:20px;color:#ffffff;background-color:#503341;text-align:center;}
+.tool-prev{width:80px;}.tool-menu{width:64px;}.tool-book{width:116px;}.tool-next{width:100px;}
+.objection-words{width:396px;justify-content:space-between;align-items:center;}
+.objection-word{padding:6px;lines:-1;line-height:24px;text-align:center;color:#fff0f3;background-color:#83445b;font-family:manosabafont;}
+.objection-hint{width:190px;height:30px;font-size:18px;text-align:right;color:#ffd1db;}
+.game-title{font-size:28px;color:#f3ddd3;text-align:left;margin-bottom:12px;}
+.subtitle{font-size:20px;color:#bca7ad;text-align:left;margin-bottom:24px;}
+.action{height:52px;width:356px;margin-bottom:8px;color:#ffffff;background-color:#583646;text-align:center;font-size:24px;}
+.choice-panel{position:absolute;top:0px;left:0px;width:432px;height:514px;background-color:#241b27;flex-direction:column;padding:24px 18px;}
+.choice-title{height:44px;font-size:25px;color:#ffffff;margin-bottom:14px;text-align:left;}
+.choice-list{width:396px;height:370px;flex-direction:column;}
+.choice{height:112px;flex-shrink:0;lines:-1;width:396px;padding:16px;background-color:#583646;font-size:24px;line-height:32px;color:#ffffff;text-align:left;margin-bottom:10px;}
+.choice-toolbar{height:44px;width:396px;justify-content:space-between;}
+.small-action{width:190px;height:44px;font-size:22px;color:#ffffff;text-align:center;background-color:#583646;}
+.overlay{position:absolute;top:0px;left:0px;width:432px;height:514px;flex-direction:column;padding:22px 32px;}
+.reading-menu{position:absolute;top:0px;left:0px;width:432px;height:514px;flex-direction:column;padding:14px 32px;}
+.read-action{height:47px;margin-bottom:5px;font-size:22px;color:#ffffff;background-color:#583646;text-align:center;}
+.menu-title{height:40px;font-size:28px;color:#f3ddd3;text-align:left;margin-bottom:12px;}
+.menu-action{height:49px;font-size:22px;color:#ffffff;background-color:#583646;margin-bottom:8px;text-align:center;}
+.muted{color:#d5bcc3;background-color:#3d2b38;}
+.full-panel{position:absolute;top:0px;left:0px;width:432px;height:514px;flex-direction:column;padding:16px 18px;}
+.panel-title{height:36px;font-size:28px;color:#f3ddd3;text-align:left;margin-bottom:4px;}
+.panel-subtitle{height:22px;font-size:16px;color:#bca7ad;text-align:left;margin-bottom:6px;}
+.slot-list{height:368px;width:396px;flex-direction:column;}
+.slot-card{height:84px;width:396px;margin-bottom:8px;padding:7px 12px;flex-direction:column;background-color:#3d2b38;}
+.slot-title{height:26px;font-size:22px;color:#f0dfd4;}
+.slot-meta{height:19px;font-size:16px;color:#bca7ad;}
+.slot-preview{height:22px;font-size:18px;color:#c9b0b8;}
+.pager{height:44px;width:396px;justify-content:space-between;align-items:center;}
+.pager-action{font-size:20px;color:#f0dfd4;padding:8px;}
+.gallery-row{height:184px;width:396px;justify-content:space-between;}
+.gallery-card{height:176px;width:192px;padding:6px;flex-direction:column;background-color:#3d2b38;}
+.gallery-thumb{height:116px;width:180px;object-fit:contain;background-color:#241b27;}
+.gallery-caption{height:48px;width:180px;font-size:18px;line-height:22px;color:#ecdcd3;text-align:center;}
+.cg-panel{position:absolute;top:0px;left:0px;width:432px;height:514px;flex-direction:column;background-color:#241b27;}
+.cg-image{width:432px;height:432px;object-fit:contain;}
+.cg-caption{width:432px;height:28px;font-size:18px;color:#ecdcd3;text-align:center;}
+.cg-controls{width:432px;height:54px;padding:0px 10px;justify-content:space-between;align-items:center;background-color:#3d2b38;}
+.end-panel{position:absolute;top:0px;left:0px;width:432px;height:514px;flex-direction:column;padding:160px 38px 24px;}
+.confirm-text{font-size:24px;color:#ecdcd3;margin:30px 0px;}
+.error-text{font-size:22px;color:#945746;margin-bottom:30px;}
+.loading{position:absolute;top:234px;left:128px;width:176px;height:46px;text-align:center;font-size:23px;color:#ffffff;background-color:#583646;}
+.book-scroll{height:364px;width:396px;flex-direction:column;}
+.book-text{width:396px;flex-shrink:0;lines:-1;font-size:23px;line-height:32px;color:#f1e3db;}
+.objection{width:115px;height:30px;font-size:20px;text-align:right;color:#ffd1db;}
+.book-image{width:396px;height:220px;flex-shrink:0;object-fit:contain;margin-bottom:12px;}
+</style>

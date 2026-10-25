@@ -1,0 +1,18 @@
+{
+  "version": "0.1.6",
+  "comparedWith": "0.1.5 delivered RPK and source ZIP",
+  "comparedBlocks": 458,
+  "unchangedOriginalOpcodes": 90243,
+  "opcodePositionsUnchanged": true,
+  "preparedPlanAddedOutsideOpcodes": true,
+  "unchangedGameplayImagePixels": 557,
+  "embeddedFontBytesIdentical": true,
+  "saveSchemaAnd30KeysIdentical": true,
+  "expectedChanges": [
+    "visited map entries last; original area ids and source indices retained",
+    "precomputed text, map and portrait metadata",
+    "larger original-word objection buttons; source targets unchanged",
+    "left menu and right handbook",
+    "new round app-list icon crop"
+  ]
+}

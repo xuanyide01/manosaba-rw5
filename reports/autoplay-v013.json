@@ -1,0 +1,26 @@
+{
+  "version": "0.1.3",
+  "passed": 34,
+  "failed": 0,
+  "runtime": 10,
+  "autoplayAndUI": 15,
+  "v012Fixes": 9,
+  "behaviors": [
+    "current completed sentence waits without retyping",
+    "30ms per character on following sentences",
+    "2600/1500/800ms base wait",
+    "extra over 60 chars at 30ms each capped at 5000ms",
+    "choice, objection, map, evidence and execution stop",
+    "drag hold and inertia suspend, release restarts full wait",
+    "menu, handbook, slots and background suspend",
+    "previous, title, end and failure disable",
+    "manual text speed independent",
+    "old 30 save slots and keys retained"
+  ],
+  "sourceSha256": {
+    "src\\common\\autoplay.js": "69ad16f7e7b4bf16454a47a7e95764c7112b11dd1c1577639fd5d6ba2a1e054c",
+    "src\\pages\\index\\index.ux": "19d10a985b9ac1a2d9474127e4b92904635515d2dfae8c663f18a5c5ff1e4d58",
+    "src\\common\\saves.js": "9103226f57cf85dfd2a408fc34a3c608d326ddeca5bc922f62fa7a575b599d69",
+    "tests\\autoplay.cjs": "01fb7bdc8d3ee6e5d94aea1dd57c374c6d215cc4da8e2188dc956477041766e5"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "file": "com.codex.manosaba.rw5.debug.0.1.7.rpk",
+  "version": "0.1.7",
+  "bytes": 9983969,
+  "expandedBytes": 18321247,
+  "entries": 1474,
+  "sha256": "98e6e64634258aa90cdd6361449b900ddc9b6145ab941fd1ed11ab0e0be4a56b",
+  "certificateSha256": "4e8e1ee24968b0dad6d0956a7e14d848b38b22a203f39c389a45d8737bdc4585",
+  "zipCRCValid": true,
+  "outerSignatureValid": true,
+  "innerSignatureValid": true,
+  "allFileDigestsValid": true,
+  "signedFiles": 1042,
+  "capBytes": 10000000,
+  "watchManifestValid": true,
+  "commonResourcesIdenticalToSource": true,
+  "decodedImages": 574,
+  "maxImagePixels": 222048,
+  "allStoryAndNotebookGlyphsCovered": true,
+  "roundTransparentIcon": true,
+  "chunkMaxOps": 512,
+  "physicalDeviceTested": false
+}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1.7",
+  "sha256": "98e6e64634258aa90cdd6361449b900ddc9b6145ab941fd1ed11ab0e0be4a56b",
+  "bytes": 9983969,
+  "baselineVersion": "0.1.6",
+  "baselineSha256": "a7fec6038265448a3598742aaef6e3b36b1dd5f02021aadd55190867831fb4a4",
+  "sourceFilesCompared": 1053,
+  "sourceChanges": [
+    "src/common/logo.png",
+    "src/manifest.json"
+  ],
+  "packageChanges": [
+    "META-INF/CERT",
+    "META-INF/build.txt",
+    "app.js",
+    "common/logo.png",
+    "manifest-watch.json",
+    "manifest.json"
+  ],
+  "unchangedPackageEntries": 1468,
+  "compiledGameplayUnchanged": true,
+  "allOtherSourceFilesIdentical": true,
+  "iconPngBitDepth": 8,
+  "iconPngColorType": 6,
+  "nativeEvidenceInheritedFrom": "0.1.6",
+  "currentPackageNativeTested": false,
+  "currentPackagePhysicalTested": false,
+  "scope": "Icon and version metadata only; existing 0.1.6 gameplay checks were not rerun"
+}

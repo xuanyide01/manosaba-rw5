@@ -1,0 +1,16 @@
+
+const fs=require('fs'),path=require('path'),{load,ops,frame,root}=require('../tests/loader.cjs');const a=load();
+const staticReport={stops:0,offers:0,items:0,emptyMenus:[],invalidTargets:[],sourceOpcodePositionsPreserved:true};for(const [id,scene] of Object.entries(a.catalog.scenes)){const all=ops(id);for(let i=0;i<all.length;i++){const o=all[i];if(o.op==='offer')staticReport.offers++;if(o.op!=='choice')continue;staticReport.stops++;if(!o.items.length)staticReport.emptyMenus.push([id,i]);for(const x of o.items){staticReport.items++;if(x.to<0||x.to>=scene.length||x.end<x.to||x.end>=scene.length)staticReport.invalidTargets.push([id,i,x.to,x.end]);}}}
+function signature(s){return JSON.stringify([s.chapter,s.cursor,s.variables,s.book,s.stack.map(x=>[x.chapter,x.cursor]),s.pending.map(x=>[x.menu,x.to]),s.choiceBlock]);}
+const results=[];const limit=Number(process.env.CHOICE_AUDIT_LIMIT||2000),seeds=a.catalog.chapters.filter(x=>/_Trial\d/.test(x.id));
+for(const seed of seeds){const queue=[a.checkpoint(a.newState(seed.id))],seen=new Set(),errors=[],menus=new Set(),answers=new Set();let states=0,returns=0,saveReloads=0,exits=0,losses=0;
+ while(queue.length&&states<limit){const s=a.restore(queue.shift());s.history=[];try{for(let i=0;i<5000;i++){const f=frame(a,s);if(s.rootChapter!==seed.id&&/_(Adv|Trial)\d+$/.test(s.rootChapter)){exits++;break;}if(f.type==='end'){if(f.kind==='trialFail')losses++;break;}const sig=signature(s);if(seen.has(sig))break;seen.add(sig);
+ if(f.type==='choice'){const key=s.chapter+':'+s.cursor;menus.add(key);const checkpoint=a.checkpoint(s),reloaded=a.restore(JSON.parse(JSON.stringify(checkpoint)));reloaded.pending=[];reloaded.activeChoices=null;const fresh=frame(a,reloaded);if(fresh.type!=='choice'||JSON.stringify(f.items.map(x=>x.text))!==JSON.stringify(fresh.items.map(x=>x.text)))throw Error('Rebuilt menu differs '+key);saveReloads++;
+ f.items.forEach((item,index)=>{const n=a.restore(checkpoint);a.choose(n,item,index);answers.add(key+':'+index);if(item.text==='返回')returns++;queue.push(a.checkpoint(n));});break;}
+ if(s.links.length)s.links.forEach((link,index)=>{const n=a.restore(a.checkpoint(s));a.objectTo(n,index);queue.push(a.checkpoint(n));});a.next(s);
+ }}catch(e){errors.push({at:s.chapter+':'+s.cursor,error:e.message});}states++;}
+ const row={scene:seed.id,states,queued:queue.length,limitReached:queue.length>0,menus:menus.size,answers:answers.size,returns,saveReloads,exits,losses,errors};results.push(row);console.log(seed.id,states,menus.size,answers.size,errors.length,row.limitReached?'BOUNDED':'DONE');
+}
+const report={static:staticReport,trialScenes:results.length,limitPerScene:limit,summary:{states:results.reduce((n,x)=>n+x.states,0),menus:results.reduce((n,x)=>n+x.menus,0),answers:results.reduce((n,x)=>n+x.answers,0),saveReloads:results.reduce((n,x)=>n+x.saveReloads,0),errors:results.reduce((n,x)=>n+x.errors.length,0),boundedScenes:results.filter(x=>x.limitReached).length},results};
+fs.writeFileSync(path.join(root,'reports/all-choice-audit.json'),JSON.stringify(report,null,2));console.log('ALL_CHOICE_AUDIT',JSON.stringify({...report,results:undefined}));if(report.summary.errors||staticReport.emptyMenus.length||staticReport.invalidTargets.length)process.exitCode=1;
+

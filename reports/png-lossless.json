@@ -1,0 +1,10 @@
+{
+  "optimizer": "pyoxipng 9.1.1",
+  "files": 168,
+  "beforeBytes": 3927780,
+  "afterBytes": 3894362,
+  "savedBytes": 33418,
+  "rgbaPixelsIdentical": true,
+  "bitDepthUnchanged": true,
+  "interlaced": false
+}

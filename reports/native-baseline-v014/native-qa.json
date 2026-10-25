@@ -1,0 +1,48 @@
+{
+  "version": "0.1.4",
+  "reusedAlreadyVerifiedInstallation": false,
+  "testHarnessCorrection": "First ordinary answer immediately enters original Bad01; corrected the expected destination, with the game RPK unchanged.",
+  "packageSha256": "3da66f5d8aba5603ff1ce5cbc666290c9a9afaf21ec882c4cb13cdeec0dafb69",
+  "packageBytes": 9887985,
+  "checks": [
+    "final 0.1.4 RPK installed and launched without resetting storage",
+    "old v0.1.0 slot 1 still loads",
+    "skip crosses daily scenes to first original choice; auto is disabled",
+    "skip from an existing choice retains answers; first answer enters its original Bad01 branch",
+    "daily story stops at Trial00 first sentence rather than skipping trial opening",
+    "inside trial skip stops at the first objection and cannot bypass it",
+    "existing objection keyword list survives menu skip and Return to testimony still works",
+    "chapter 1 finale reaches chapter 2 first sentence and remains stopped"
+  ],
+  "jumpTimings": [
+    {
+      "label": "new game crosses Adv01-04 to choice",
+      "milliseconds": 1435
+    },
+    {
+      "label": "daily story to trial opening",
+      "milliseconds": 668
+    },
+    {
+      "label": "trial opening to objection keyword",
+      "milliseconds": 451
+    },
+    {
+      "label": "actual next chapter opening",
+      "milliseconds": 450
+    }
+  ],
+  "captures": [
+    "01-title.png",
+    "02-skip-to-choice.png",
+    "03-current-choice-preserved.png",
+    "04-trial-opening.png",
+    "05-objection-stop.png",
+    "06-keywords-preserved.png",
+    "07-next-chapter.png",
+    "08-final-title.png"
+  ],
+  "captureDirectory": "reports/native-baseline-v014",
+  "nativePlatform": "official Vela generic 432x514",
+  "physicalDeviceTested": false
+}

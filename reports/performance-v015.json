@@ -1,0 +1,149 @@
+{
+  "version": "0.1.5",
+  "packageSha256": "c01d8f4f462f53698c7824c1838e02657b2087fcb9c12d54a56b9850d3cb0c23",
+  "baselinePackageSha256": "3da66f5d8aba5603ff1ce5cbc666290c9a9afaf21ec882c4cb13cdeec0dafb69",
+  "measurement": "same isolated official Vela device; click-to-stop-frame-log, excludes subsequent typewriter completion; one run per path, not physical-device timing",
+  "comparison": [
+    {
+      "label": "new game crosses Adv01-04 to choice",
+      "beforeMs": 1435,
+      "afterMs": 1120,
+      "reductionPercent": 22
+    },
+    {
+      "label": "daily story to trial opening",
+      "beforeMs": 668,
+      "afterMs": 669,
+      "reductionPercent": 0
+    },
+    {
+      "label": "trial opening to objection keyword",
+      "beforeMs": 451,
+      "afterMs": 349,
+      "reductionPercent": 23
+    },
+    {
+      "label": "actual next chapter opening",
+      "beforeMs": 450,
+      "afterMs": 346,
+      "reductionPercent": 23
+    }
+  ],
+  "profiles": [
+    {
+      "label": "new game crosses Adv01-04 to choice",
+      "milliseconds": 1120,
+      "profile": {
+        "reason": "choice",
+        "autoEnabled": true,
+        "cache": {
+          "loads": 6,
+          "hits": 10,
+          "residentHits": 10,
+          "evictions": 3,
+          "cachedBlocks": 2,
+          "sourceChars": 53979,
+          "maxBlocks": 2,
+          "maxSourceChars": 65536,
+          "residentBlocks": 2
+        },
+        "milliseconds": 978,
+        "fileReads": 4,
+        "cacheHits": 8,
+        "residentHits": 8
+      }
+    },
+    {
+      "label": "daily story to trial opening",
+      "milliseconds": 669,
+      "profile": {
+        "reason": "trial",
+        "autoEnabled": true,
+        "cache": {
+          "loads": 9,
+          "hits": 16,
+          "residentHits": 15,
+          "evictions": 4,
+          "cachedBlocks": 2,
+          "sourceChars": 5474,
+          "maxBlocks": 2,
+          "maxSourceChars": 65536,
+          "residentBlocks": 2
+        },
+        "milliseconds": 471,
+        "fileReads": 2,
+        "cacheHits": 4,
+        "residentHits": 3
+      }
+    },
+    {
+      "label": "trial opening to objection keyword",
+      "milliseconds": 349,
+      "profile": {
+        "reason": "objection",
+        "autoEnabled": true,
+        "cache": {
+          "loads": 10,
+          "hits": 20,
+          "residentHits": 19,
+          "evictions": 5,
+          "cachedBlocks": 2,
+          "sourceChars": 23214,
+          "maxBlocks": 2,
+          "maxSourceChars": 65536,
+          "residentBlocks": 2
+        },
+        "milliseconds": 185,
+        "fileReads": 1,
+        "cacheHits": 4,
+        "residentHits": 4
+      }
+    },
+    {
+      "label": "actual next chapter opening",
+      "milliseconds": 346,
+      "profile": {
+        "reason": "chapter",
+        "autoEnabled": false,
+        "cache": {
+          "loads": 12,
+          "hits": 25,
+          "residentHits": 24,
+          "evictions": 5,
+          "cachedBlocks": 2,
+          "sourceChars": 34830,
+          "maxBlocks": 2,
+          "maxSourceChars": 65536,
+          "residentBlocks": 2
+        },
+        "milliseconds": 192,
+        "fileReads": 1,
+        "cacheHits": 3,
+        "residentHits": 3
+      }
+    },
+    {
+      "label": "next chapter with auto enabled",
+      "milliseconds": 344,
+      "profile": {
+        "reason": "chapter",
+        "autoEnabled": true,
+        "cache": {
+          "loads": 14,
+          "hits": 30,
+          "residentHits": 29,
+          "evictions": 5,
+          "cachedBlocks": 2,
+          "sourceChars": 34830,
+          "maxBlocks": 2,
+          "maxSourceChars": 65536,
+          "residentBlocks": 2
+        },
+        "milliseconds": 194,
+        "fileReads": 1,
+        "cacheHits": 3,
+        "residentHits": 3
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.1.7",
+  "packageSha256": "98e6e64634258aa90cdd6361449b900ddc9b6145ab941fd1ed11ab0e0be4a56b",
+  "packageBytes": 9983969,
+  "device": "REDMI Watch 5",
+  "reportedOn": "2026-10-25",
+  "reportedBy": "maintainer",
+  "physicalTestPassed": true,
+  "userStatement": "实测通过，暂未发现bug。上传github。",
+  "completeRouteCoverageClaimed": false,
+  "independentInstrumentedPhysicalTestClaimed": false
+}

@@ -1,0 +1,12 @@
+{
+  "name": "manosaba-rw5",
+  "version": "0.1.7",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build.cjs",
+    "test": "node --test tests/runtime.cjs tests/autoplay.cjs tests/fixes-v012.cjs tests/chapter-skip.cjs tests/program-store.cjs tests/ui-v016.cjs"
+  },
+  "devDependencies": {
+    "aiot-toolkit": "1.1.0"
+  }
+}
